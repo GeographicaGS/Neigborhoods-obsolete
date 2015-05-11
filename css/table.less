@@ -1,0 +1,49 @@
+.caret {
+    border-left: 4px solid transparent;
+    border-right: 4px solid transparent;
+    border-top: 4px dashed;
+    display: inline-block;
+    height: 0;
+    margin-left: 2px;
+    vertical-align: middle;
+    width: 0;
+}
+.table-wrap{
+	padding:40px 70px;
+	.indicators-table{
+		width: 100%;
+		font-family: @font-body;
+		.font-size(1.6);
+		line-height: 40/16;
+		color:@boGrey-d;
+		
+		th{
+			font-weight: normal;
+			text-align: left;
+			color:@boBlack;
+			border-bottom:1px solid @boBlack;
+			&.sort {
+				color:@boViolet;
+			}
+		}
+		td{
+			border-bottom:1px solid @boGrey-l;
+			&.all{
+				font-weight: 700;
+			}
+		}
+
+		.col-1{
+			
+			width:27.146464646%; /* 215 (originally 215) / 792 */ 
+		}
+		.col-2 {
+			width: 63.131313131%; /* 500 (originally 500) / 792 */ 
+		}
+		.col-3 {
+			width: 9.722222222%; /* 77 (originally 77) / 792 */ 
+			text-align: right;
+		}
+
+	}
+}

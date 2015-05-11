@@ -1,0 +1,161 @@
+.indicators {
+	header {
+		display: block;
+		h2 {
+			display: block;
+			clear:both;
+			padding-left: 47px;
+			font-family: @font-heading;
+			.font-size(1.6);
+			line-height: 48/16;
+			color:@boViolet;
+			background: @boViolet-l;
+			border-bottom:1px solid @boViolet-m;
+			background: @boViolet-l url('../images/bo_ico_factores.svg') no-repeat 7px 7px;
+			background-size: 36px auto;
+			margin-bottom: 40px;
+
+			span {
+
+				text-transform: uppercase;
+				color:@boGrey-m;
+				margin-right: 3px;
+				
+
+
+				font-weight: 400;
+			} 
+		}//h2
+
+		.back-to-page {
+			float: left;
+			margin-left: 18px;
+			margin-top: 5px;
+			display: block;
+			cursor:pointer;
+			&:hover {
+				opacity:0.5;
+			}
+		}
+
+		h3{
+			margin-left: 70px;
+
+			font-family: @font-body;
+			font-weight: 300;
+			.font-size(3.6);
+			line-height: 38/36;
+			color: @boViolet;
+
+		}
+
+	}//header
+	.tabs-wrapper{
+		padding:10px 0;
+		margin-left: 70px;
+		font-family: @font-heading;
+		text-transform: uppercase;
+		.font-size(1.6);
+		line-height: 48/16;
+		border-bottom:1px solid @boGrey-l;
+		// overflow: hidden;
+		&:after {
+			content:"";
+			display: table;
+			clear:both;
+
+		}
+		.nav {
+			.clearfix;
+
+			li {
+				float:left;
+				display: inline-block;
+				margin-right: 30px;
+				cursor: pointer;
+				&.active {
+					color:@boViolet;
+				}
+				&:hover {
+					text-decoration: underline;
+				}
+
+
+			}//li
+		}//ul
+
+		.filters {
+			float: right;
+			margin-right: 70px;
+			.clearfix;
+			.label {
+				color:@boGrey-m;
+				float: left;
+				display: inline-block;
+				margin-right: 30px;
+			}
+			.select {
+				margin-top:10px;
+				position:relative;
+				float:left;
+				display: inline-block;
+				font-family:@font-body;
+				.font-size(1.6);
+				line-height: 28/16;
+				text-transform: none;	
+				text-align: center;
+				
+				span {
+					display: inline-block;
+					border-radius: 3px;
+					border: 1px solid @boGrey-l;
+					padding:0 10px;
+					cursor: pointer;
+					&:hover{
+						background:darken(#fff, 5%);
+						box-shadow: inset 0 1px 2px 0 rgba(0,0,0, 0.1);
+					}
+				}	
+				ul {
+					position:absolute;
+					width:100%;
+					top: 100%;
+					z-index:3;
+					border: 1px solid @boGrey-l;
+					border-top: 0 none;
+					margin-top: -3px;
+					box-shadow: 0 1px 4px 0 rgba(0,0,0,0.25);
+					li {
+						background: #fff;
+						display: block;
+
+						border-top:1px solid @boGrey-l;
+						cursor:pointer;
+						&:hover{
+							background: darken(#fff, 2%);
+						}//hover	
+
+					}//li
+				}//ul
+
+			}//select
+
+		}//filters
+	}//tabs-wrapper
+	.txt-content {
+		padding:20px 70px 10px ;
+		font-family: @font-body;
+		.font-size(1.8);
+		line-height: 22/18;
+
+		p {
+			margin: 10px 0 20px;
+			font-weight: 300;
+		}
+		a{
+			color:@boBlack;
+			border-bottom:1px solid @boGold;
+		}
+	}
+
+}//indicators

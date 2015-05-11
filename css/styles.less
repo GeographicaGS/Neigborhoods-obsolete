@@ -24,6 +24,9 @@ body {
 	.font-size(1.4);
 }
 
+/*	HEADER
+===================================================================================== */
+
 header {
 	display: block;
 	
@@ -70,98 +73,95 @@ header {
 
 }//header
 
+
+
+
+/*	MAIN
+===================================================================================== */
+
 #content {
 	position:relative;
 
-	.factores-wrapper {
+	.aside-wrapper {
 		position: fixed;
-		// overflow-y:scroll;
-		
 		top:92px;
 		left: 0;
 		width:100%;
 		width:50%;
 		height: ~"calc(100% - (92px + 50px))";
 		max-width: 924px;
-
 		.inner {
 			overflow-y:scroll;
 			position: relative;
 			height: 100%;
 			width:100%;
 		}
-
-		
-		// padding-bottom: 80px + 50;	
 		border-right:1px solid @boGrey-m;
-		
-
-		
-
-
-
 	}//factors wrapper
-	header {
-		border-bottom:1px solid;
-			
-		h2 {
-			display: inline-block;
-			padding: 10px 0;
-			padding-left: 67px;
-			background: url('../images/bo_ico_factores.svg') no-repeat 0 0;  
-			.font-size(2.1);
-			line-height: 2.286; //48px / 21px = PSD pixels line height devided by font-size;
-			font-family: @font-heading;
+	
+	.lista {
+		header {
+			border-bottom:1px solid;
+				
+			h2 {
+				display: inline-block;
+				padding: 10px 0;
+				padding-left: 67px;
+				background: url('../images/bo_ico_factores.svg') no-repeat 0 0;  
+				.font-size(2.1);
+				line-height: 2.286; //48px / 21px = PSD pixels line height devided by font-size;
+				font-family: @font-heading;
 
-		}//h2
+			}//h2
 
-		.counter {
-			
-			display: inline-block;
-			float:right;
-			margin: 0 25px 0 0;
-			padding: 10px 0 0 55px;
-			font-family: @font-body;
-			font-weight: 100;
-			.font-size(3.6);
-			line-height:  48/36;
-			color: @boGrey-d;
-			background: url('../images/bo_ico_factores.svg') no-repeat 0 -67px*3;
-			
-		}//counter
-	}//header
+			.counter {
+				
+				display: inline-block;
+				float:right;
+				margin: 0 25px 0 0;
+				padding: 10px 0 0 55px;
+				font-family: @font-body;
+				font-weight: 100;
+				.font-size(3.6);
+				line-height:  48/36;
+				color: @boGrey-d;
+				background: url('../images/bo_ico_factores.svg') no-repeat 0 -67px*3;
+				
+			}//counter
+		}//header
 
-	ul {
-		li {
-			position: relative;
-			padding-left: 67px;
-			.font-size(1.8);
-			line-height: 48/18; 
-			font-family: @font-body;
-			font-weight: 300;
-			border-bottom: 1px solid @boGrey-l;
-			// transition: background-color, 0.2s, linear;
-			background-color:transparent;
-			cursor:pointer;
+		ul {
+			li {
+				position: relative;
+				padding-left: 67px;
+				.font-size(1.8);
+				line-height: 48/18; 
+				font-family: @font-body;
+				font-weight: 300;
+				border-bottom: 1px solid @boGrey-l;
+				// transition: background-color, 0.2s, linear;
+				background-color:transparent;
+				cursor:pointer;
 
-			&:hover{
-			 
-			 background: darken(#fff, 2%);
-			}
-			
-			&:before {
-				content:"";
-				display: block;
-				position:absolute;
-				width:54px;
-				height: 9px;
-				// right:15px;
-				left:0;
-				top:50%;
-				margin-top:-4.5px;
-			}//before
-		}//li
-	}//ul
+				&:hover{
+				 
+				 background: darken(#fff, 2%);
+				}
+				
+				&:before {
+					content:"";
+					display: block;
+					position:absolute;
+					width:54px;
+					height: 9px;
+					// right:15px;
+					left:0;
+					top:50%;
+					margin-top:-4.5px;
+				}//before
+			}//li
+		}//ul
+	}//.lista
 
 
 }//#content
@@ -286,17 +286,16 @@ button {
 				background-position: -36px -36px;
 
 			}
-		}
+		}//control-2
 
 
-	}
+	}//button
 	
-	
-	
-}
+}//controls
 
 
-
+/* FOOTER
+======================================================================================== */
 
 footer {
 	body > & {
@@ -373,3 +372,6 @@ footer {
 	}//contributors
 
 }//footer
+
+@import "ind.less";
+@import "table.less";
