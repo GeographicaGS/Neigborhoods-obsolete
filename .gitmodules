@@ -1,3 +1,6 @@
 [submodule "pepa"]
 	path = pepa
 	url = https://github.com/GeographicaGS/Pepa.git
+[submodule "lib/Pepa"]
+	path = lib/Pepa
+	url = https://github.com/GeographicaGS/Pepa.git
