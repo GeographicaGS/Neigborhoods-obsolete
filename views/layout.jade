@@ -1,0 +1,64 @@
+doctype html
+html
+    head
+        title= title
+        meta(charset='utf8')
+        meta(name='author' content='Geographica')
+        meta(name='Description' content='#{desc}')
+        
+        link(rel='stylesheet', href='/lib/leaflet-0.7.3/leaflet.css')
+        link(rel='stylesheet', href='/stylesheets/style.css')
+        
+        script(src='https://www.google.com/jsapi' type="text/javascript")
+        
+        if 'production' != process.env.NODE_ENV 
+            script(src='/lib/jquery-2.1.3.js')
+            script(src='/lib/leaflet-0.7.3/leaflet.js')
+            script(src='/js/global.js')
+            script(src='/js/family.js')
+            script(src='/js/indicator.js')
+
+        else
+            script(src='/js/main.js')
+
+    body()
+
+        //- script.
+        //-     globalObject = new Global();
+        header(class="banner")
+            .brand.logo
+                h1
+                    a(href='/')
+                      img(src='images/bo_logo.svg', alt='MBP Proyecto de Investigacion: Intervención en barriadas residenciales obsoletas')
+            .logo
+              a(href='#')
+                img(src='images/bo_logo_universidadsevilla.png', alt='Logo Universidad de Sevilla')
+            .logo
+              a(href='#')
+                img(src='images/bo_logo_capc_2.png', alt='CAPC y TEP')
+            .logo
+              a(href='#')
+                img(src='images/bo_logo_tep.png', alt='TEP')
+        
+        script.
+            globalObject = new Global();
+
+        div(class='global_content')
+            block content
+            div(id="map")
+
+        include footer.jade
+        block js
+
+        script.
+            globalObject.onReady();
+
+
+
+
+
+
+
+
+
+    

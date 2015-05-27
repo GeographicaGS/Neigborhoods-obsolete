@@ -1,0 +1,54 @@
+//- extends layout
+
+//- block content
+//- div(id="content" class="group" role="main")
+section.aside-wrapper.indicators
+	.inner
+		header
+			umbral()= indicator.umbral
+			h2(class=indicator.family_id == 1 ? "socioeconomicos":"constructivos")
+				span.label CATEGOR&Iacute;A
+				|  #{indicator.family_name}
+
+			img.back-to-page(src='images/bo_ico_back.png', alt='')
+			h3(class=indicator.family_id == 1 ? "socioeconomicos":"constructivos") #{indicator.indicator_name}
+			.tabs-wrapper
+				ul.nav
+					li(menu="1", class=indicator.family_id == 1 ? "active socioeconomicos":"active constructivos") Tabla
+					li(menu="2",class=indicator.family_id == 1 ? "socioeconomicos":"constructivos") Gr&aacute;fica
+					li(menu="3",class=indicator.family_id == 1 ? "socioeconomicos":"constructivos") Nota Metodol&oacute;gica
+				.filters
+					span.label Filtrar por
+					ul.select
+						li
+							span.dropdown-toggle(href='#') Toda Andaluc&iacute;a
+							ul
+								each city in cities
+									li()= city.name
+								
+								li Toda Andaluc&iacute;a
+			.table-wrap
+				table.indicators-table
+					tr
+						//- th.col-1.sort
+						th.col-1
+							| Ciudad
+							//- span.caret
+							span
+						th.tg-031e Barriada
+						th.col-3 Valor
+
+					each d in data
+						tr(city=d.city, lat=d.lat, lng=d.lng)
+							td(class="col-1")= d.city
+							td(class="tg-031e")= d.nombrebloq + " - " + d.nom_barr
+							td(class="col-3")= d.valor
+			
+			div(id="chart_div")
+
+	button.viewsize-toggle
+	.controls
+		button.control-1
+		button.active.control-2
+
+

@@ -1,0 +1,409 @@
+// *  {
+// 	outline: 2px red dashed;
+// }
+
+/*
+
+    Positioning
+    Box model
+    Typographic
+    Visual
+*/
+
+@import 'reset';
+@import 'base';
+@import "variables.less";
+@import "mixins.less";
+
+html {
+	font-size: 62.5%;
+
+}
+body {
+	font-family: @font-body;
+	.font-size(1.4);
+}
+
+/*	HEADER
+===================================================================================== */
+
+header {
+	display: block;
+	
+	
+	body > & {
+		position: fixed;
+		top:0;
+		left: 0;
+		right: 0;
+		width:100%;
+
+		padding: 20px 0 ;
+		text-align: right;
+		background:@boBlack;
+		a:hover{
+			opacity: 0.8;
+		}//a:hover
+	}//body > header
+	
+	.clearfix;
+
+	.brand.logo {
+		float: left;
+		margin-left: 20px;
+	}//brand
+	
+	.logo {
+		// float: right;
+		margin-right: 20px;
+		display: inline-block;
+		a {
+			display: block;
+		}
+		&:nth-child(2) {
+			border-right:1px solid @boGrey-d;
+			img {
+				margin-right: 20px;
+
+			}
+		}//first-child
+		
+		
+	}//logo
+
+}//header
+
+
+
+
+/*	MAIN
+===================================================================================== */
+
+#content {
+	position:relative;
+
+	.aside-wrapper {
+		position: fixed;
+		top:92px;
+		left: 0;
+		width:100%;
+		width:50%;
+		height: ~"calc(100% - (92px + 50px))";
+		// max-width: 924px;
+		.inner {
+			overflow-y:scroll;
+			position: relative;
+			height: 100%;
+			width:100%;
+		}
+		border-right:1px solid @boGrey-m;
+	}//factors wrapper
+	
+	.lista {
+		header {
+			border-bottom:1px solid;
+				
+			h2 {
+				display: inline-block;
+				padding: 10px 0;
+				padding-left: 67px;
+				background: url('../images/bo_ico_factores.svg') no-repeat 0 0;  
+				.font-size(2.1);
+				line-height: 2.286; //48px / 21px = PSD pixels line height devided by font-size;
+				font-family: @font-heading;
+
+			}//h2
+
+			.counter {
+				
+				display: inline-block;
+				float:right;
+				margin: 0 25px 0 0;
+				padding: 10px 0 0 55px;
+				font-family: @font-body;
+				font-weight: 100;
+				.font-size(3.6);
+				line-height:  48/36;
+				color: @boGrey-d;
+				background: url('../images/bo_ico_factores.svg') no-repeat 0 -67px*3;
+				
+			}//counter
+		}//header
+
+		ul {
+			li {
+				position: relative;
+				padding-left: 67px;
+				.font-size(1.8);
+				line-height: 48/18; 
+				font-family: @font-body;
+				font-weight: 300;
+				border-bottom: 1px solid @boGrey-l;
+				// transition: background-color, 0.2s, linear;
+				// background-color:transparent;
+				background-color:#fff;
+				cursor:pointer;
+
+				&:hover{
+				 
+				 background: darken(#fff, 2%);
+				}
+				
+				&:before {
+					content:"";
+					display: block;
+					position:absolute;
+					width:54px;
+					height: 9px;
+					// right:15px;
+					left:0;
+					top:50%;
+					margin-top:-4.5px;
+				}//before
+			}//li
+		}//ul
+	}//.lista
+
+}//#content
+
+#map{
+	position: fixed;
+	top: 92px;
+	left: 50%;
+	width: 50%;
+	height: ~"calc(100% - (92px + 50px))";
+}
+
+#socioeconomicos {
+	header {
+		background: @boViolet-l;
+		border-color: @boViolet-m;
+		h2{	
+			color:@boViolet;
+
+		}
+	}// header
+	li {
+		color: @boViolet;
+		
+		&:before {
+			background: @boViolet-l;
+		}
+		&.active:before, &:hover:before {
+			background: @boViolet;
+		}
+	}
+}//socioeconomicos
+
+#constructivos {
+	header {
+		background: @boGreen-l;
+		border-color: @boGreen-m;
+		h2{	
+			color:@boGreen;
+			background-position: 0 -67px !important;
+		}
+
+	}// header
+	li {
+		color:@boGreen;
+
+		&:before {
+			background: @boGreen-l;
+		}
+		&.active:before, &:hover:before{
+			background:@boGreen;
+		}
+	}
+}//constructivos
+
+#energeticos {
+	header {
+		background: @boRed-l;
+		border-color: @boRed-m;
+		h2{	
+			color:@boRed;
+			background-position: 0 -67px*2 !important;
+		}
+	}// header
+	li {
+		color:@boRed;
+		&:before  {
+			background: @boRed-l;
+		}
+		&.active:before, &:hover:before {
+			background: @boRed;
+		}
+	}
+}//energeticos
+
+
+/*BUTTONS
+--------------------------------------------------------------------------- */
+button {
+	width:36px;
+	height:36px;
+	border:1px solid #b1b1b2;
+	&:hover{
+		background-color: darken(#fff, 5%);
+	}
+}
+
+.viewsize-toggle {
+	position:absolute;
+	top:20px;
+	right:-57px;
+	box-shadow: 0 1px 4px 0 rgba(0,0,0,.3);
+	border-radius:3px;
+	background: url('../images/bo_ico_viewsize_toggle.svg') no-repeat 50% 50% white;
+	
+}//viewsize-toggle
+
+.controls {
+	position: fixed;
+	right:20px;
+	top:113px;
+	box-shadow: 0 1px 4px 0 rgba(0,0,0,.3);
+	border-radius:3px;
+	overflow: hidden;
+	width:36px;
+	height:36px * 2 -1;
+	button{
+		background: url('../images/bo_ico_controls.svg') no-repeat 0 0;
+		posizion:relative;
+		z-index:2;
+		&:hover{
+			background-color: darken(#fff, 5%);
+		}
+		&.active {
+			background-color: @boBlack;
+			border-color:@boBlack;
+			cursor:normal;
+			z-index:1;
+		}
+		&.control-1 {
+			background-position: 0 0;
+			&.active {
+				background-position: 0 -36px;
+			}
+		}
+		&.control-2 {
+			margin-top:-1px;
+			background-position: -36px 0;
+			&.active{
+				background-position: -36px -36px;
+
+			}
+		}//control-2
+
+
+	}//button
+	
+}//controls
+
+
+/* FOOTER
+======================================================================================== */
+
+footer {
+	body > & {
+		position: fixed;
+		bottom:0;
+		width: 100%;
+		height:50px;
+		background: @boGrey-d;
+		.clearfix;
+
+	}//body > footer
+	.legal {
+		display: inline-block;
+		float: left;
+		color: #ccccce;
+		line-height: 50/14;
+		margin-left: 20px;
+		.clearfix;
+
+		span {
+			color:#fff;
+		}
+	}//legal
+	.contributors {
+		// float:right;
+		text-align: right;
+		.logo {
+			display: inline-block;
+			margin-right: 20px;
+			margin-top: 7px;
+			// min-height:40px;
+			height: 50px;
+			img{
+				display: block;
+			}
+			&:first-child {
+				margin-right:40px;
+			}
+			&.credits {
+
+				border-left:1px solid #77777d;
+				// display: inline-block;
+				margin-top: 0;
+
+				position:relative;
+				vertical-align: top;
+				padding-left: 20px;
+				.font-size(1.2);
+				line-height: 50/12;
+				color:#ccccce;
+				&:hover{
+					text-decoration: underline;
+					span {
+						text-decoration: underline;
+					}
+				}
+				
+				img{
+					display: inline-block;
+					margin-right: 5px;
+					line-height: 50px;
+					vertical-align: middle;
+				}
+				span{
+					display: inline-block;
+					color:#7eb904;
+				}
+				
+		}//credits
+
+		}//logo
+		
+
+	}//contributors
+
+}//footer
+
+h2{
+	&.socioeconomicos{
+		background-color: rgba(81,81,233,0.1) !important;
+	}
+
+}
+
+.socioeconomicos{
+	color:@boViolet;
+}
+
+h2{
+	&.constructivos{
+		background-color: rgba(11,160,95,0.1) !important;
+		background-position: 0 -32px !important
+	}
+
+}
+
+.constructivos{
+	color:@boGreen;
+}
+
+@import "ind.less";
+@import "table.less";
+@import "chart.less";

@@ -1,0 +1,80 @@
+// Project specific 
+
+
+
+//Set pfont-size in rems - only works with html {font-size: 62.5%; /* Sets up the Base 10 stuff */}
+
+.font-size(@sizeValue) {
+  @remValue: @sizeValue;
+  @pxValue: (@sizeValue * 10);
+  font-size: ~"@{pxValue}px"; 
+  font-size: ~"@{remValue}rem";
+}
+
+
+/* Responsive
+=========================================================== */
+
+//very small screens
+.xsm-body {
+	font-size: 16px ;
+	line-height: 1.375em ;
+}
+
+.xsm-h1 {
+	font-size:32px ;
+	line-height:1.25em ;
+}
+
+.xsm-h2 {
+	font-size:26px ;
+	line-height: 1.15384615em ;
+}
+
+.xsm-h3 {
+	font-size:22px ;
+	line-height:1.13636364em ;
+}
+
+.xsm-h4 {
+	font-size:18px ;
+	line-height: 1.11111111em ;
+}
+
+.xsm-blockquote {
+	font-size:20px ;
+	line-height:1.25em ;
+}
+
+//medium screen
+.sm-body {
+	font-size: 16px ;
+	line-height: 1.25em ;
+}
+
+.sm-h1 {
+	font-size:40px ;
+	line-height:1.125em ; //45px
+	line-height: 45px;
+}
+
+.sm-h2 {
+	font-size:32px ;
+	line-height: 1.25em ;
+}
+
+.sm-h3 {
+	font-size:24px ;
+	line-height:1.25em ;
+}
+
+.sm-h4 {
+	font-size:18px ;
+	line-height: 1.22222222em ;
+}
+
+.sm-blockquote {
+	font-size:24px ;
+	line-height: 1.45833333em ;
+}
+
