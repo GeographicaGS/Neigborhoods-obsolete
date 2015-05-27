@@ -18,7 +18,6 @@ Family.prototype.onReady = function(){
 	        	$("#data").show();
 	        	indicatorObject.drawSimbols();
 	        	indicatorObject.drawChart();
-	        	$('#chart_div').addClass('hide');
 	        }
 		});
 	});

@@ -24,9 +24,7 @@ Indicator.prototype.onReady = function(){
 			$(".indicators-table tr[city='" + $(this).text() + "']").show();
 		}
 		indicatorObject.drawSimbols();
-		$('#chart_div').removeClass('hide');
 	    indicatorObject.drawChart();
-	    $('#chart_div').addClass('hide');
 	});
 
 	$("#data").on('click', '.table-wrap .indicators-table tr', function(e) {
@@ -63,7 +61,7 @@ Indicator.prototype.drawSimbols = function(){
         var lat = $(tr[i]).attr("lat");
         var lng = $(tr[i]).attr("lng");
         var value = parseInt($(tr[i]).find(".col-3").text());
-        var city = $(tr[i]).attr("city");
+        var city = $(tr[i]).find('td.tg-031e').text();
         if(value > 0){
             var circle = new L.CircleMarker([lat,lng], {
                radius: (30 * value)/umbral,
@@ -82,6 +80,7 @@ Indicator.prototype.drawSimbols = function(){
 }
 
 Indicator.prototype.drawChart = function(options){
+	$('#chart_div').removeClass('hide');
 	var options = {
 	      pieHole: 0.7,
 	      chartArea: {'width': '85%', 'height': '85%', 'top':'30px'},
@@ -104,6 +103,11 @@ Indicator.prototype.drawChart = function(options){
   
   var chart = new google.visualization.PieChart(document.getElementById('chart_div'));
   chart.draw(data, options);
+
+  var menu = $("#data .nav li.active").attr("menu");
+  if(menu != '2'){
+  	$('#chart_div').addClass('hide');
+  }
 }
 
 function getActiveData(){
