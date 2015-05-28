@@ -7,7 +7,7 @@ var config = require('../config');
 
 function buildJS(deps) {
 
-    var path = "js-built",
+    var path = config.basePath + "/js-built",
         fs = require('fs'),
         UglifyJS = require('uglify-js');
 
@@ -15,12 +15,13 @@ function buildJS(deps) {
         var content = '';
         for (var i = 0, len = files.length; i < len; i++) {
             console.log("Building file: " + files[i]);
-            content += fs.readFileSync("js/" + files[i], 'utf8') +"\n\n";       
+            content += fs.readFileSync(config.basePath + "/js/" + files[i], 'utf8') +"\n\n";       
         }
         return content;
     }
 
     if (!fs.existsSync(path)){
+        console.log(path);
         fs.mkdirSync(path);
     }
 
@@ -47,4 +48,3 @@ app.set('port', process.env.PORT || config.port);
 var server = app.listen(app.get('port'), function() {
   debug('Express server listening on port ' + server.address().port);
 });
-
