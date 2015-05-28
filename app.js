@@ -43,7 +43,8 @@ db.init(function(err){
             fs.mkdirSync(buildFolder);
         }
 
-        app.use("/js",express.static(buildFolder));    
+        app.use("/js",express.static(buildFolder));
+        app.use("/lib",express.static(path.join(__dirname, 'lib')));  
     }
 
     app.use(lessMiddleware(path.join(__dirname, 'public'), {
