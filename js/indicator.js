@@ -41,12 +41,13 @@ Indicator.prototype.onReady = function(){
 
 		$("#data .table-wrap").addClass('hide');
 		$("#chart_div").addClass('hide');
+		$("#note").addClass('hide');
 		if(menu=='1'){
 			$("#data .table-wrap").removeClass('hide');
 		}else if(menu=='2'){
 			$("#chart_div").removeClass('hide');
 		}else{
-
+			$("#note").removeClass('hide');
 		}
 	});
 }
