@@ -126,11 +126,20 @@ header {
 				line-height:  48/36;
 				color: @boGrey-d;
 				background: url('../images/bo_ico_factores.svg') no-repeat 0 -67px*3;
+				cursor: pointer;
 				
 			}//counter
 		}//header
 
 		ul {
+			height: 0;
+			visibility: hidden;
+
+			&.active{
+				height: auto;
+				visibility: visible;
+			}
+
 			li {
 				position: relative;
 				padding-left: 67px;

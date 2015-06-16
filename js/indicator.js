@@ -5,8 +5,13 @@ function Indicator(){
 Indicator.prototype.onReady = function(){
 	
 	$("#data").unbind().on('click', '.indicators .tabs-wrapper .filters .select span', function(event) {
-		$("#data .indicators .tabs-wrapper .filters .select ul").removeClass('active');
-		$(this).next("ul").toggleClass('active');
+		var elem = $(this).next("ul");
+		if(!elem.hasClass('active')){
+			$("#data .indicators .tabs-wrapper .filters .select ul").removeClass('active');
+			elem.toggleClass('active');
+		}else{
+			$("#data .indicators .tabs-wrapper .filters .select ul").removeClass('active');
+		}
 	});
 
 	$("#data").on('click', '.back-to-page', function(event) {
@@ -99,6 +104,10 @@ Indicator.prototype.onReady = function(){
 		}else{
 			$("#note").removeClass('hide');
 		}
+	});
+
+	$('#content .lista header .counter').unbind().on('click',function(){
+		$(this).closest('section').next('ul').toggleClass('active');
 	});
 }
 
