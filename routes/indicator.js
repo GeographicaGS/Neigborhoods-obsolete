@@ -9,11 +9,14 @@ router.get('/indicator/:id', function(req, res, next) {
 	IndicatorModel.getIndicator(id,function(err,dataIndicator){
 		IndicatorModel.getIndicatorData(dataIndicator[0].table_name,function(err,data){
 			IndicatorModel.getCities(function(err,dataCity){
-				res.render('indicator', { 
-					title: 'Barriadas obsoletas',
-					indicator:dataIndicator[0],
-					cities:dataCity,
-					data:data
+				IndicatorModel.getTowns(function(err,dataTown){
+					res.render('indicator', { 
+						title: 'Barriadas obsoletas',
+						indicator:dataIndicator[0],
+						cities:dataCity,
+						towns:dataTown,
+						data:data
+					});
 				});
 			});
 		});

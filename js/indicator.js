@@ -5,6 +5,7 @@ function Indicator(){
 Indicator.prototype.onReady = function(){
 	
 	$("#data").unbind().on('click', '.indicators .tabs-wrapper .filters .select span', function(event) {
+		$("#data .indicators .tabs-wrapper .filters .select ul").removeClass('active');
 		$(this).next("ul").toggleClass('active');
 	});
 
@@ -14,17 +15,66 @@ Indicator.prototype.onReady = function(){
 		map.setView(initLatLng,initZoom);
 	});
 
-	$("#data").on('click', '.indicators .tabs-wrapper .filters .select ul li', function(e) {
-		$("#data .indicators .tabs-wrapper .filters .select span").text($(this).text());
-		$("#data .indicators .tabs-wrapper .filters .select ul").removeClass('active');
+	// $("#data").on('click', '.indicators .tabs-wrapper .filters .select ul li', function(e) {
+	// 	$("#data .indicators .tabs-wrapper .filters .select span").text($(this).text());
+	// 	$("#data .indicators .tabs-wrapper .filters .select ul").removeClass('active');
+	// 	if($(this).text() == "Toda Andalucía"){
+	// 		$(".indicators-table tr").show();
+	// 	}else{
+	// 		$(".indicators-table tr").hide();
+	// 		$(".indicators-table tr[city='" + $(this).text() + "']").show();
+	// 	}
+	// 	// indicatorObject.drawSimbols();
+	//  //    indicatorObject.drawChart();
+	// });
+	
+	$("#data").on('click', '.indicators .tabs-wrapper .filters .select.city ul li', function(e) {
+		$("#data .indicators .tabs-wrapper .filters .select.city span").text($(this).text());
+		$("#data .indicators .tabs-wrapper .filters .select.city ul").removeClass('active');
+
+		var city = $(this).text();
+		if(city == 'Toda Andalucía'){
+			$('#data .indicators .tabs-wrapper .filters .select.town').addClass('hide');
+		}else{
+			$('#data .indicators .tabs-wrapper .filters .select.town ul li').addClass('hide');
+			$('#data .indicators .tabs-wrapper .filters .select.town ul li[city=all]').removeClass('hide');
+			$('#data .indicators .tabs-wrapper .filters .select.town ul li[city=' + city +']').removeClass('hide');
+			$("#data .indicators .tabs-wrapper .filters .select.town span").text('Todos')
+			$('#data .indicators .tabs-wrapper .filters .select.town').removeClass('hide');
+		}
+
 		if($(this).text() == "Toda Andalucía"){
 			$(".indicators-table tr").show();
+			indicatorObject.drawSimbols();
 		}else{
 			$(".indicators-table tr").hide();
 			$(".indicators-table tr[city='" + $(this).text() + "']").show();
 		}
 		indicatorObject.drawSimbols();
-	    indicatorObject.drawChart();
+		indicatorObject.drawChart();
+		
+		// if($(this).text() == "Toda Andalucía"){
+		// 	$(".indicators-table tr").show();
+		// }else{
+		// 	$(".indicators-table tr").hide();
+		// 	$(".indicators-table tr[city='" + $(this).text() + "']").show();
+		// }
+		// indicatorObject.drawSimbols();
+	 //    indicatorObject.drawChart();
+	});
+
+	$("#data").on('click', '.indicators .tabs-wrapper .filters .select.town ul li', function(e) {
+		$("#data .indicators .tabs-wrapper .filters .select.town span").text($(this).text());
+		$("#data .indicators .tabs-wrapper .filters .select.town ul").removeClass('active');
+		$(".indicators-table tr").hide();
+		if($(this).text() == 'Todos'){
+			var city = $("#data .indicators .tabs-wrapper .filters .select.city span").text();
+			$(".indicators-table tr[city='" + city + "']").show();
+		}else{
+			$(".indicators-table tr[town='" + $(this).text() + "']").show();
+		}
+		indicatorObject.drawSimbols();
+		indicatorObject.drawChart();
 	});
 
 	$("#data").on('click', '.table-wrap .indicators-table tr', function(e) {
@@ -54,7 +104,7 @@ Indicator.prototype.onReady = function(){
 
 Indicator.prototype.drawSimbols = function(){
     featureGroup.clearLayers();
-    var city = $("#data .indicators .tabs-wrapper .filters .select span").text();
+    // var city = $("#data .indicators .tabs-wrapper .filters .select.city span").text();
 	var tr = getActiveData();
 	
     var umbral = parseInt($("umbral").text());
@@ -62,7 +112,8 @@ Indicator.prototype.drawSimbols = function(){
         var lat = $(tr[i]).attr("lat");
         var lng = $(tr[i]).attr("lng");
         var value = parseInt($(tr[i]).find(".col-3").text());
-        var city = $(tr[i]).find('td.tg-031e').text();
+        var city = $(tr[i]).attr('city')
+        var town = $(tr[i]).attr('town')
         if(value > 0){
             var circle = new L.CircleMarker([lat,lng], {
                radius: (30 * value)/umbral,
@@ -74,7 +125,9 @@ Indicator.prototype.drawSimbols = function(){
                clickable: true,
                value : value,
             });
-            circle.bindPopup(city + " : " + value.toString());
+            
+        	circle.bindPopup(town + " : " + value.toString());
+
             featureGroup.addLayer(circle);
         }
     }
@@ -94,7 +147,7 @@ Indicator.prototype.drawChart = function(options){
   var data = new google.visualization.DataTable();
   data.addColumn('string', 'Neighborhood');
   data.addColumn('number', 'Value');
-  var city = $("#data .indicators .tabs-wrapper .filters .select span").text();
+  // var city = $("#data .indicators .tabs-wrapper .filters .select.city span").text();
   var tr = getActiveData();
   for(var i=0; i<tr.length; i++){
   	var value = parseInt($(tr[i]).find(".col-3").text());
@@ -112,11 +165,16 @@ Indicator.prototype.drawChart = function(options){
 }
 
 function getActiveData(){
-	var city = $("#data .indicators .tabs-wrapper .filters .select span").text();
+	var city = $("#data .indicators .tabs-wrapper .filters .select.city span").text();
+	var town = $("#data .indicators .tabs-wrapper .filters .select.town span").text();
 	if(city=="Toda Andalucía"){
 		var tr = $("#data").find(".indicators-table tr[city]");
 	}else{
-		var tr = $("#data").find(".indicators-table tr[city='" + city + "']");
+		if(town == 'Todos'){
+			var tr = $("#data").find(".indicators-table tr[city='" + city + "']");
+		}else{
+			var tr = $("#data").find(".indicators-table tr[town='" + town + "']");
+		}
 	}
 	return tr;
 }

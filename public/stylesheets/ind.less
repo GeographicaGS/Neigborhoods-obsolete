@@ -12,7 +12,7 @@
 			.font-size(1.6);
 			line-height: 48/16;
 			background: @boViolet-l;
-			border-bottom:1px solid @boViolet-m;
+			// border-bottom:1px solid @boViolet-m;
 			background: @boViolet-l url('../images/bo_ico_factores.svg') no-repeat 7px 7px;
 			background-size: 36px auto;
 			margin-bottom: 40px;
@@ -83,6 +83,9 @@
 					&.constructivos{
 						color:@boGreen;
 					}
+					&.energeticos{
+						color:@boRed;
+					}
 				}
 				&:hover {
 					text-decoration: underline;
@@ -112,6 +115,10 @@
 				line-height: 28/16;
 				text-transform: none;	
 				text-align: center;
+
+				&.town{
+					margin-top: 0px;
+				}
 				
 				span {
 					display: inline-block;

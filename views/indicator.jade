@@ -2,24 +2,32 @@
 
 //- block content
 //- div(id="content" class="group" role="main")
+
+if indicator.family_id == 1
+	- var indicatorClass = "socioeconomicos"
+else if indicator.family_id == 2
+	- var indicatorClass = "constructivos"
+else
+	- var indicatorClass = "energeticos"
+
 section.aside-wrapper.indicators
 	.inner
 		header
 			umbral()= indicator.umbral
-			h2(class=indicator.family_id == 1 ? "socioeconomicos":"constructivos")
+			h2(class=indicatorClass)
 				span.label CATEGOR&Iacute;A
 				|  #{indicator.family_name}
 
 			img.back-to-page(src='images/bo_ico_back.png', alt='')
-			h3(class=indicator.family_id == 1 ? "socioeconomicos":"constructivos") #{indicator.indicator_name}
+			h3(class=indicatorClass) #{indicator.indicator_name}
 			.tabs-wrapper
 				ul.nav
-					li(menu="1", class=indicator.family_id == 1 ? "active socioeconomicos":"active constructivos") Tabla
-					li(menu="2",class=indicator.family_id == 1 ? "socioeconomicos":"constructivos") Gr&aacute;fica
-					li(menu="3",class=indicator.family_id == 1 ? "socioeconomicos":"constructivos") Nota Metodol&oacute;gica
+					li(menu="1", class=indicatorClass + ' active') Tabla
+					li(menu="2",class=indicatorClass) Gr&aacute;fica
+					li(menu="3",class=indicatorClass) Nota
 				.filters
 					span.label Filtrar por
-					ul.select
+					ul.select.city
 						li
 							span.dropdown-toggle(href='#') Toda Andaluc&iacute;a
 							ul
@@ -27,6 +35,17 @@ section.aside-wrapper.indicators
 									li()= city.name
 								
 								li Toda Andaluc&iacute;a
+
+				.filters
+					ul.select.town.hide
+						li
+							span.dropdown-toggle.town(href='#') Todos
+							ul
+								each town in towns
+									li(city=town.city)= town.name
+
+								li(city='all') Todos
+								
 			.table-wrap
 				table.indicators-table
 					tr
@@ -39,7 +58,7 @@ section.aside-wrapper.indicators
 						th.col-3 Valor
 
 					each d in data
-						tr(city=d.city, lat=d.lat, lng=d.lng)
+						tr(city=d.city, town=d.town lat=d.lat, lng=d.lng)
 							td(class="col-1")= d.city
 							td(class="tg-031e")= d.nombrebloq + " - " + d.nom_barr
 							td(class="col-3")= d.valor

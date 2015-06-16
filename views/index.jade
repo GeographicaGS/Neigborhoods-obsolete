@@ -13,8 +13,10 @@ block content
 							- id_family =  family.id_family
 							if family.id_family == 1
 								- var sectionClass = "socioeconomicos"
-							else
+							else if family.id_family == 2
 								- var sectionClass = "constructivos"
+							else
+								- var sectionClass = "energeticos"
 								
 							section(id=sectionClass)
 								header

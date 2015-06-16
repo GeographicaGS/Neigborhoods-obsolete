@@ -393,15 +393,29 @@ h2{
 }
 
 h2{
+	&.socioeconomicos{
+		border-bottom:1px solid @boViolet-m;
+	}
+
 	&.constructivos{
 		background-color: rgba(11,160,95,0.1) !important;
-		background-position: 0 -32px !important
+		background-position: 0 -32px !important;
+		border-bottom: 1px solid @boGreen-m;
+	}
+	&.energeticos{
+		background-color: rgba(255,102,102,0.1) !important;
+		background-position: 0 -65px !important;
+		border-bottom: 1px solid @boRed-m;
 	}
 
 }
 
 .constructivos{
 	color:@boGreen;
+}
+
+.energeticos{
+	color:@boRed;
 }
 
 @import "ind.less";
