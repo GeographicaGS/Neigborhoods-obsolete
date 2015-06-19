@@ -24,8 +24,10 @@ block content
 									.counter 7
 
 							<ul>
-
-						li(id_indicator=family.id_indicator)= family.indicator_mame
+						if family.indicator_mame == 'Total de indicadores socioeconómicos - físicos'
+							li(style="font-weight: bold;" id_indicator=family.id_indicator)= family.indicator_mame
+						else
+							li(id_indicator=family.id_indicator)= family.indicator_mame
 
 				button.viewsize-toggle
 			.controls

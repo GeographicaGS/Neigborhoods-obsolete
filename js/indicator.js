@@ -53,7 +53,7 @@ Indicator.prototype.onReady = function(){
 			indicatorObject.drawSimbols();
 		}else{
 			$(".indicators-table tr").hide();
-			$(".indicators-table tr[city='" + $(this).text() + "']").show();
+			$(".indicators-table tr[city='" + $(this).text() + "'], .table_header").show();
 		}
 		indicatorObject.drawSimbols();
 		indicatorObject.drawChart();
@@ -74,9 +74,9 @@ Indicator.prototype.onReady = function(){
 		$(".indicators-table tr").hide();
 		if($(this).text() == 'Todos'){
 			var city = $("#data .indicators .tabs-wrapper .filters .select.city span").text();
-			$(".indicators-table tr[city='" + city + "']").show();
+			$(".indicators-table tr[city='" + city + "'], .table_header").show();
 		}else{
-			$(".indicators-table tr[town='" + $(this).text() + "']").show();
+			$(".indicators-table tr[town='" + $(this).text() + "'], .table_header").show();
 		}
 		indicatorObject.drawSimbols();
 		indicatorObject.drawChart();
@@ -106,7 +106,7 @@ Indicator.prototype.onReady = function(){
 		}
 	});
 
-	$('#content .lista header .counter').unbind().on('click',function(){
+	$('#content .lista header').unbind().on('click',function(){
 		$(this).closest('section').next('ul').toggleClass('active');
 	});
 }

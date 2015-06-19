@@ -101,6 +101,7 @@ header {
 	
 	.lista {
 		header {
+			cursor: pointer;
 			border-bottom:1px solid;
 				
 			h2 {
@@ -133,10 +134,18 @@ header {
 
 		ul {
 			height: 0;
+			opacity: 0;
 			visibility: hidden;
+
+			-webkit-transition: opacity .5s ease-in-out;
+			-moz-transition: opacity .5s ease-in-out;
+			-ms-transition: opacity .5s ease-in-out;
+			-o-transition: opacity .5s ease-in-out;
+			transition: opacity .5s ease-in-out;
 
 			&.active{
 				height: auto;
+				opacity: 1;
 				visibility: visible;
 			}
 

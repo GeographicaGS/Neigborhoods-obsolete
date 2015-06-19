@@ -48,7 +48,7 @@ section.aside-wrapper.indicators
 								
 			.table-wrap
 				table.indicators-table
-					tr
+					tr(class='table_header')
 						//- th.col-1.sort
 						th.col-1
 							| Ciudad
@@ -59,14 +59,14 @@ section.aside-wrapper.indicators
 
 					each d in data
 						tr(city=d.city, town=d.town lat=d.lat, lng=d.lng)
-							td(class="col-1")= d.city
+							td(class="col-1")= d.town
 							td(class="tg-031e")= d.nombrebloq + " - " + d.nom_barr
 							td(class="col-3")= d.valor
 			
 			div(id="chart_div")
 
 			div(id="note" class="hide")
-				p Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec volutpat diam nisi, ac varius dui hendrerit a. Vivamus quis lobortis velit, consequat sagittis dui. In molestie odio ac lobortis congue. Ut feugiat tincidunt sodales. Fusce lobortis dolor et risus molestie pellentesque. In sed metus vitae nulla efficitur porta. Nulla nec vestibulum augue. Fusce vulputate felis eu mauris euismod maximus. Suspendisse potenti. Donec porta mi enim, non interdum massa porttitor ut. Etiam euismod tortor et nibh euismod, at molestie sem tempor. In vitae eleifend lectus. In hac habitasse platea dictumst. Donec in lacus a ligula varius vestibulum eget et tortor. Aenean vel leo velit. Vivamus vitae ligula scelerisque, scelerisque purus et, pellentesque risus. Suspendisse vulputate diam leo, at mollis diam convallis vitae. In hac habitasse platea dictumst. In ornare vitae quam vitae blandit. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Sed tristique non lectus sed molestie. Ut mollis, sapien non maximus euismod, risus mauris laoreet arcu, eget congue nibh purus ac turpis. Pellentesque faucibus ex eu urna porttitor euismod. Cras feugiat cursus enim et tristique. Praesent vitae euismod orci. Nam in mi quis orci congue viverra quis in urna. Morbi euismod congue vestibulum. Etiam pharetra, elit sed tempor bibendum, risus tellus egestas ligula, non tincidunt massa mi vel nibh. Proin non nibh vitae ipsum rhoncus congue. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Praesent tempor massa quam, in semper urna efficitur ac. Morbi quis accumsan magna. Nam ullamcorper luctus molestie. Vivamus non orci id ligula congue tincidunt. Quisque nec tempor purus. Phasellus lobortis enim in ex tempor luctus eget dictum urna. Aenean nisi sapien, facilisis et magna at, dignissim blandit nibh. Suspendisse in lobortis mauris. Nullam nec ipsum nisi. Donec pharetra magna leo, vitae convallis felis mollis in. Donec commodo diam non nibh sollicitudin ultrices. Fusce sapien quam, varius at ante et, molestie tempus est. Aliquam erat volutpat.
+				p #{indicator.note}
 
 	button.viewsize-toggle
 	.controls
