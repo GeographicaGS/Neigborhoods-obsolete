@@ -8,7 +8,7 @@ function Global(){
 
 Global.prototype.onReady = function(){
     map = L.map('map').setView(initLatLng, initZoom);
-    L.tileLayer('http://{s}.tile.osm.org/{z}/{x}/{y}.png', {attribution: '&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'}).addTo(map);
+    L.tileLayer('http://{s}.tiles.wmflabs.org/bw-mapnik/{z}/{x}/{y}.png', {attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'}).addTo(map);
     featureGroup = L.featureGroup();
     featureGroup.addTo(map);
     $.ajax({

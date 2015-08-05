@@ -144,14 +144,46 @@ Indicator.prototype.drawSimbols = function(){
 
 Indicator.prototype.drawChart = function(options){
 	$('#chart_div').removeClass('hide');
+	// var options = {
+	//       pieHole: 0.7,
+	//       chartArea: {'width': '85%', 'height': '85%', 'top':'30px'},
+	//       // legend: { position: 'bottom', alignment: 'end' },
+	//       // legend: 'none',
+	//       // backgroundColor: '#f2f2f2',
+	//       fontSize: 12,
+	// };
+
 	var options = {
-	      pieHole: 0.7,
-	      chartArea: {'width': '85%', 'height': '85%', 'top':'30px'},
-	      // legend: { position: 'bottom', alignment: 'end' },
-	      // legend: 'none',
-	      // backgroundColor: '#f2f2f2',
-	      fontSize: 12,
-	};
+          bars: 'horizontal',
+          chartArea: { 
+          	// width: "60%" 
+          	left:200
+          },
+          bar: { groupWidth: "20%" },
+          legend: { position: "none" },
+       //    animation:{
+	      //   duration: 1000,
+	      //   easing: 'out',
+	      // },
+	      vAxis:{
+	      	textStyle:{
+	      		fontSize:12,
+	      		color:'#5d5b5c',
+	      	}
+	      },
+
+	      hAxis:{
+	      	textStyle:{
+	      		fontSize:14,
+	      		color:'#5d5b5c'
+	      	},
+	      	viewWindow:{
+          		min:0
+          	}
+	      },
+	      colors:['#587BFF']
+
+        };
 
   var data = new google.visualization.DataTable();
   data.addColumn('string', 'Neighborhood');
@@ -164,7 +196,8 @@ Indicator.prototype.drawChart = function(options){
   	data.addRow([neighborhood, value]);
   }
   
-  var chart = new google.visualization.PieChart(document.getElementById('chart_div'));
+  // var chart = new google.visualization.PieChart(document.getElementById('chart_div'));
+  var chart = new google.visualization.BarChart(document.getElementById('chart_div'));
   chart.draw(data, options);
 
   var menu = $("#data .nav li.active").attr("menu");
