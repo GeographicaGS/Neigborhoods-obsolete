@@ -1,0 +1,44 @@
+//- extends layout
+
+//- block content
+//- div(id="content" class="group" role="main")
+div(id="index")
+	.aside-wrapper.lista
+		.inner
+			- var id_family = ""
+			each family in families
+				if id_family != family.id_family
+					if id_family != ""
+						</ul>
+					- id_family =  family.id_family
+					if family.id_family == 1
+						- var sectionClass = "socioeconomicos"
+					else if family.id_family == 2
+						- var sectionClass = "constructivos"
+					else
+						- var sectionClass = "energeticos"
+						
+					section(id=sectionClass)
+						header
+							h2()= family.family_name
+							.counter 7
+
+					<ul>
+				if family.indicator_mame == 'Total de indicadores socioeconómicos - físicos'
+					li(style="font-weight: bold;" id_indicator=family.id_indicator)= family.indicator_mame
+				else
+					li(id_indicator=family.id_indicator)= family.indicator_mame
+
+		button.viewsize-toggle
+	.controls
+		button.control-1
+		button.active.control-2
+
+div(id="data")
+	//- include indicator.jade
+
+//- block js
+	script.
+		new Family().onReady();
+		indicatorObject = new Indicator();
+		new new Indicator().onReady();

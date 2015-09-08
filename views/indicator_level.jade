@@ -1,0 +1,26 @@
+div(id="dataLevel")
+	section.aside-wrapper
+		.inner
+			.header
+				img.back-to-page(src='images/bo_ico_back.png', alt='')
+				h3 #{level1.nom_barr}
+				.levels
+					span(class="active" level="level_1") NIVEL 1
+						span Datos generales de la barriada
+					span(level="level_2" class=level2 ? "" : "disable") NIVEL 2
+						span Datos constructivos de la edificación
+					span(level="level_3" class=level3SupNeigh ? "" : "disable") NIVEL 3
+						span Datos socioeconómicos, físicos y energéticos
+			
+			.level_1
+				include level_1.jade
+			
+			if level2
+				.level_2.hide
+					include level_2.jade
+			
+			if level3SupNeigh
+				.level_3.hide
+					include level_3.jade
+
+				

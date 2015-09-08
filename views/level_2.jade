@@ -1,0 +1,470 @@
+.table-wrap
+	table.indicators-table
+		tr(class='table_header')
+			th Datos básicos
+			th Valor
+		tr
+			td Código barriada
+			td #{level2.nombrebloq}
+		tr
+			td Tipología
+			td #{level2.tipologia}
+		tr
+			td Área (m<sup>2</sup>) area
+			td #{level2.area}
+		tr
+			td Densidad viviendas (hab/m<sup>2</sup>) dens_viv
+			td #{level2.dens_viv}
+		tr
+			td Número viviendas
+			td #{level2.num_viv}
+		tr
+			td Edad media población
+			td #{level2.edad_pob}
+		tr
+			td Año de finalización
+			td #{level2.agno_fin}
+		tr
+			td Promotor
+			td #{level2.promotor}
+		tr
+			td Arquitecto
+			td #{level2.arquitecto}
+
+	table.indicators-table
+		tr(class='table_header')
+			th Nivel de estudios
+			th Valor
+		tr
+			td Analfabetos  (%)
+			td #{level2.analfabet}
+		tr
+			td Sin estudios (%)
+			td #{level2.sin_estudi}
+		tr
+			td Primer grado (%)
+			td #{level2.est_1_grad}
+		tr
+			td Segundo grado (%)
+			td #{level2.est_2_grad}
+		tr
+			td Tercer grado (%)
+			td #{level2.est_3_grad}
+		tr
+			td No es aplicable (%)
+			td #{level2.no_aplicab}
+
+	table.indicators-table
+		tr(class='table_header')
+			th Ocupación
+			th Valor
+		tr
+			td Ocupados (%)
+			td #{level2.Ocupados}
+		tr
+			td Estudiantes (%)
+			td #{level2.estudiant}
+		tr
+			td Desempleados (%)
+			td #{level2.desemplead}
+		tr
+			td Subsidiarios/rentistas (%)
+			td #{level2.subsd_rent}
+		tr
+			td Otra situación (%)
+			td #{level2.otra_situa}
+		tr
+			td Extranjeros (%)
+			td #{level2.extranjer}
+
+	table.indicators-table
+		tr(class='table_header')
+			th Tipología de vivienda
+			th Valor
+		tr
+			td Viviendas principales (%)
+			td #{level2.viv_ppales}
+		tr
+			td Viviendas secundarias (%)
+			td #{level2.viv_secund}
+		tr
+			td Viviendas vacías (%)
+			td #{level2.viv_vacias}
+		tr
+			td Propiedad
+			td #{level2.propiedad}
+
+	table.indicators-table
+		tr(class='table_header')
+			th Datos de la estructura
+			th Valor
+		tr(class='table_sub_header')
+			th(colspan="2") Estructura vertical
+		tr
+			td Tipo de muro de carga
+			td #{level2.ev_muro}
+		tr
+			td Tipo de pilares
+			td #{level2.ev_pilares}
+		tr(class='table_sub_header')
+			th(colspan="2") Estructura horizontal planta tipo
+		tr
+			td Tipo
+			td #{level2.eh_pt_tipo}
+		tr
+			td Estructura principal
+			td #{level2.eh_pt_estr}
+		tr
+			td Elementos secundarios forjado
+			td #{level2.eh_pt_secu}
+		tr
+			td Entrevigado forjado
+			td #{level2.eh_pt_entr}
+		tr(class='table_sub_header')
+			th(colspan="2") Estructura horizontal planta baja
+		tr
+			td Tipo
+			td #{level2.eh_p0_tipo}
+		tr
+			td Estructura principal
+			td #{level2.eh_p0_estr}
+		tr
+			td Elementos secundarios forjado
+			td #{level2.eh_p0_secu}
+		tr
+			td Entrevigado forjado
+			td #{level2.eh_p0_entr}
+		tr(class='table_sub_header')
+			th(colspan="2") Estructura de cubierta
+		tr
+			td Posición
+			td #{level2.ec_posicio}
+		tr
+			td Tipo
+			td #{level2.ec_tipo}
+		tr
+			td Estructura principal
+			td #{level2.ec_estr_pp}
+		tr
+			td Elementos secundarios forjado
+			td #{level2.ec_secunda}
+		tr
+			td Entrevigado forjado
+			td #{level2.ec_entrevi}
+		tr
+			td Observaciones
+			td #{level2.e_observac}
+
+	table.indicators-table
+		tr(class='table_header')
+			th Datos de la cimentación
+			th Valor
+		tr
+			td Tipo
+			td #{level2.ci_tipo}
+		tr
+			td Tipo cimentación superficial
+			td #{level2.ci_tipo_ci}
+		tr
+			td Tipo cimentación profunda
+			td #{level2.ci_tipo__1}
+		tr
+			td Sistemas de contención
+			td #{level2.ci_sist_co}
+		tr
+			td Observaciones
+			td #{level2.ci_observa}
+
+	table.indicators-table
+		tr(class='table_header')
+			th Datos de los cerramientos
+			th Valor
+		tr(class='table_sub_header')
+			th(colspan="2") Cerramientos verticales
+		tr
+			td cv1_Nombre
+			td #{level2.cv1_nombre}
+		tr
+			td cv1_Tipo
+			td #{level2.cv1_tipo}
+		tr
+			td cv1_Aislamiento térmico
+			td #{level2.cv1_aislam}
+		tr
+			td cv1_Composición (de exterior a interior)
+			td #{level2.cv1_compos}
+		tr
+			td cv2_Nombre
+			td #{level2.cv2_nombre}
+		tr
+			td cv2_Tipo
+			td #{level2.cv2_tipo}
+		tr
+			td cv2_Aislamiento térmico
+			td #{level2.cv2_aislam}
+		tr
+			td cv2_Composición (de exterior a interior)
+			td #{level2.cv2_compos}
+		tr
+			td cv3_Nombre
+			td #{level2.cv3_nombre}
+		tr
+			td cv3_Tipo
+			td #{level2.cv3_tipo}
+		tr
+			td cv3_Aislamiento térmico
+			td #{level2.cv3_aislam}
+		tr
+			td cv3_Composición (de exterior a interior)
+			td #{level2.cv3_compos}
+		tr
+			td cv4_Nombre
+			td #{level2.cv4_nombre}
+		tr
+			td cv4_Tipo
+			td #{level2.cv4_tipo}
+		tr
+			td cv4_Aislamiento térmico
+			td #{level2.cv4_aislam}
+		tr
+			td cv4_Composición (de exterior a interior)
+			td #{level2.cv4_compos}
+		tr
+			td Observaciones
+			td #{level2.cv_observa}
+		tr(class='table_sub_header')
+			th(colspan="2") Cubierta
+		tr
+			td Tipo
+			td #{level2.cu_tipo}
+		tr
+			td Posición
+			td #{level2.cu_posicio}
+		tr
+			td Aislamiento térmico
+			td #{level2.cu_aislam_}
+		tr
+			td Capa impermeabilizante
+			td #{level2.cu_capa_im}
+		tr
+			td Cámara de aire, tipo
+			td #{level2.cu_tipo_ca}
+		tr
+			td Composición (de exterior a interior)
+			td #{level2.cu_composi}
+		tr
+			td Observaciones
+			td #{level2.cu_observa}
+		tr(class='table_sub_header')
+			th(colspan="2") Forjados en contacto con espacio no habitable
+		tr
+			td fnh1_Nombre
+			td #{level2.fnh1_nombr}
+		tr
+			td fnh1_Uso espacio no habitable
+			td #{level2.fnh1_uso_e}
+		tr
+			td fnh1_Aislamiento térmico
+			td #{level2.fnh1_aisla}
+		tr
+			td fnh1_Cámara de aire, tipo
+			td #{level2.fnh1_tipo_}
+		tr
+			td fnh1_Composición (de arriba abajo)
+			td #{level2.fnh1_compo}
+		tr
+			td fnh2_Nombre
+			td #{level2.fnh2_nombr}
+		tr
+			td fnh2_Uso espacio no habitable
+			td #{level2.fnh2_uso_e}
+		tr
+			td fnh2_Aislamiento térmico
+			td #{level2.fnh2_aisla}
+		tr
+			td fnh2_Cámara de aire, tipo
+			td #{level2.fnh2_tipo_}
+		tr
+			td fnh2_Composición (de arriba abajo)
+			td #{level2.fnh2_compo}
+		tr
+			td Observaciones
+			td #{level2.fnh_observ}
+		tr(class='table_sub_header')
+			th(colspan="2") Suelo en contacto con el aire exterior
+		tr
+			td Nombre
+			td #{level2.fe_nombre}
+		tr
+			td Aislamiento térmico
+			td #{level2.fe_aislam_}
+		tr
+			td Composición (de arriba abajo)
+			td #{level2.fe_composi}
+		tr
+			td Observaciones fe_observa
+			td #{level2.fe_observa}
+		tr(class='table_sub_header')
+			th(colspan="2") Suelo en contacto con el terreno
+		tr
+			td Nombre
+			td #{level2.ft_nombre}
+		tr
+			td Aislamiento térmico
+			td #{level2.ft_aislam_}
+		tr
+			td Composición (de arriba abajo)
+			td #{level2.ft_composi}
+		tr
+			td Observaciones
+			td #{level2.ft_observa}
+		tr(class='table_sub_header')
+			th(colspan="2") Huecos
+		tr
+			td h1_Nombre
+			td #{level2.h1_nombre}
+		tr
+			td h1_Tipo de vidrio
+			td #{level2.h1_tipo_vi}
+		tr
+			td h1_Composición (de exterior a interior)
+			td #{level2.h1_composi}
+		tr
+			td h1_Tipo de carpintería
+			td #{level2.h1_tipo_ca}
+		tr
+			td h1_Protecciones solares, tipo
+			td #{level2.h1_tipo_pr}
+		tr
+			td h1_Retranqueo del hueco con respecto a la fachada (mm)
+			td #{level2.h1_retranq}
+		tr
+			td Observaciones
+			td #{level2.h_observac}
+
+	table.indicators-table
+		tr(class='table_header')
+			th Datos de las instalaciones
+			th Valor
+		tr(class='table_sub_header')
+			th(colspan="2") Red de evacuación de aguas
+		tr
+			td Tipo de red
+			td #{level2.re_tipo_re}
+		tr
+			td Tipo de bajantes
+			td #{level2.re_tipo_ba}
+		tr
+			td Tipo de colectores
+			td #{level2.re_tipo_co}
+		tr
+			td Solución
+			td #{level2.re_solucio}
+		tr(class='table_sub_header')
+			th(colspan="2") Red de abastecimiento de aguas
+		tr
+			td Tipo de contador
+			td #{level2.ra_tipo_co}
+		tr
+			td Solución
+			td #{level2.ra_solucio}
+		tr(class='table_sub_header')
+			th(colspan="2") Instalación eléctrica
+		tr
+			td Tipo de contador
+			td #{level2.ie_tipo_co}
+		tr
+			td Solución
+			td #{level2.ie_solucio}
+		tr(class='table_sub_header')
+			th(colspan="2") Instalación calefacción
+		tr
+			td Sistema colectivo
+			td #{level2.ic_sist_co}
+		tr
+			td Sistema colectivo, tipo de sistema
+			td #{level2.ic_tipo_si}
+		tr
+			td Sistema colectivo, tipo de producción
+			td #{level2.ic_producc}
+		tr
+			td Solución
+			td #{level2.ic_solucio}
+		tr(class='table_sub_header')
+			th(colspan="2") Instalación ACS
+		tr
+			td Sistema colectivo
+			td #{level2.iacs_sist_}
+		tr
+			td Sistema colectivo, tipo de sistema
+			td #{level2.iacs_tipo_}
+		tr
+			td Sistema colectivo, combustible
+			td #{level2.iacs_combu}
+		tr
+			td Sistema colectivo, captadores solares
+			td #{level2.iacs_capta}
+		tr
+			td Sistema individual predominante
+			td #{level2.iacs_sis_1}
+		tr
+			td Solución
+			td #{level2.iacs_soluc}
+		tr(class='table_sub_header')
+			th(colspan="2") Instalaciones refrigeración
+		tr
+			td Sistema colectivo
+			td #{level2.ir_sist_co}
+		tr
+			td Sistema colectivo, tipo
+			td #{level2.ir_tipo_si}
+		tr
+			td Sistema colectivo, descripción
+			td #{level2.ir_descrip}
+		tr
+			td Sistema individual, nº de aparatos vistos en fachada
+			td #{level2.ir_aparato}
+		tr
+			td Solución
+			td #{level2.ir_solucio}
+		tr(class='table_sub_header')
+			th(colspan="2") Instalación ventilación
+		tr
+			td Sistema locales húmedos
+			td #{level2.iv_sist_lo}
+		tr
+			td Sistema aparcamientos
+			td #{level2.iv_sist_ap}
+		tr(class='table_sub_header')
+			th(colspan="2") ¿?
+		tr
+			td Protección contra incendios
+			td #{level2.i_pci}
+		tr
+			td Protección contra el rayo (pararayos)
+			td #{level2.i_pararray}
+		tr(class='table_sub_header')
+			th(colspan="2") Instalación ICT
+		tr
+			td Solución
+			td #{level2.ict_soluci}
+		tr
+			td Canalización
+			td #{level2.ict_canali}
+		tr(class='table_sub_header')
+			th(colspan="2") ¿?
+		tr
+			td Observaciones
+			td  #{level2.i_observac}
+
+	table.indicators-table
+		tr(class='table_header')
+			th Estado de la edificación
+			th Valor
+		tr
+			td Intervención de reforma colectiva
+			td #{level2.ee_reforma}
+		tr
+			td Alcance y descripción de la reforma
+			td #{level2.ee_refor_1}
+		

@@ -1,0 +1,81 @@
+.mainData
+	section.aside-wrapper
+		.inner
+			.header
+				input(placeholder='Buscar barriada...')
+				.filters
+					span.label Filtrar por
+					ul.select.city.fright
+						li
+							span.dropdown-toggle(href='#') Toda Andaluc&iacute;a
+							ul
+								each city in cities
+									li()= city.name
+								li Toda Andaluc&iacute;a
+
+				
+					ul.select.town.disable
+						li
+							span.dropdown-toggle.town(href='#') Todos
+							ul
+								each town in towns
+									li(city=town.city)= town.name
+
+								li(city='all') Todos
+						
+			.table-wrap
+				table.indicators-table
+					tr(class='table_header')
+						th Ciudad
+						th Barriada
+						th 
+							span.info Nivel de estudio
+							.table_info.hide
+								ul
+									li Las barriadas pueden contener datos según su nivel de estudio:
+									li 
+										span.circle.blue 
+										span.blue Nivel 1&nbsp;
+										span – Datos generales de la barriada.
+									li 
+										span.circle.green
+										span.green Nivel 2&nbsp;
+										span – Datos constructivos de la edificación.
+									li 
+										span.circle.red 
+										span.red Nivel 3&nbsp;
+										span – Datos socioeconómicos, físicos y energéticos.
+						th(colspan="3") 
+							span.info Información adicional
+							.table_info.hide
+								ul
+									li.document
+										span.bold Proyecto original:&nbsp;
+											span Selección de imágenes de los planos de proyecto original.
+									li.document
+										span.bold Fichas Patrimoniales:
+											br
+											span Consideraciones patrimoniales de la barriada. 
+									li.document
+										span.bold Aplicación del Manual de Buenas Prácticas:&nbsp;
+											span Diagnóstico y evaluación global de la barriada, estrategias de reciclaje y selección de recomendaciones de intervención según el MBP.
+
+					each i in indicators
+						tr(city=i.city, town=i.town, neigh=i.nom_barr, key=i.nombrebloq, lat=i.lat, lng=i.lng)
+							td= i.town
+								span &nbsp;(#{i.city})
+							td= i.nom_barr
+							td
+								span(class="circle blue")
+								if i.level2
+									span(class="circle green")
+								else
+									span -
+								if i.level3
+									span(class="circle red")
+								else
+									span -
+							td 
+							td 
+							td
+//- div(id="dataLevel")

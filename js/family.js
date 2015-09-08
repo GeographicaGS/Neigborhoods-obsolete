@@ -3,7 +3,7 @@ function Family(){
 }
 
 Family.prototype.onReady = function(){
-	google.load("visualization", "1", {packages:["corechart"]});
+	// google.load("visualization", "1", {packages:["corechart"]});
 	var sections = $("section");
 	sections.each(function(index, section) {
 		$(section).find(".counter").text($(section).next("ul").find("li").length);
@@ -13,6 +13,7 @@ Family.prototype.onReady = function(){
 		$.ajax({
 	        url: '/indicator/' + $(this).attr("id_indicator"), 
 	        success: function(response) {
+	        	map.setView(initLatLng,initZoom);
 	        	$("#index").hide()
 	        	$("#data").html(response);
 	        	$("#data").show();

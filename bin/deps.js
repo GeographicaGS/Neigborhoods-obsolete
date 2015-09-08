@@ -3,7 +3,9 @@ var deps = [
     "../lib/leaflet-0.7.3/leaflet.js",
     "global.js",
     "family.js",
-    "indicator.js"
+    "indicator.js",
+    "main_data.js",
+    "data_level.js"
 ];
 
 exports.deps = deps;

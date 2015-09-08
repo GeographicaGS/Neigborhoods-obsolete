@@ -19,19 +19,6 @@ Indicator.prototype.onReady = function(){
 		$("#index").show();
 		map.setView(initLatLng,initZoom);
 	});
-
-	// $("#data").on('click', '.indicators .tabs-wrapper .filters .select ul li', function(e) {
-	// 	$("#data .indicators .tabs-wrapper .filters .select span").text($(this).text());
-	// 	$("#data .indicators .tabs-wrapper .filters .select ul").removeClass('active');
-	// 	if($(this).text() == "Toda Andalucía"){
-	// 		$(".indicators-table tr").show();
-	// 	}else{
-	// 		$(".indicators-table tr").hide();
-	// 		$(".indicators-table tr[city='" + $(this).text() + "']").show();
-	// 	}
-	// 	// indicatorObject.drawSimbols();
-	//  //    indicatorObject.drawChart();
-	// });
 	
 	$("#data").on('click', '.indicators .tabs-wrapper .filters .select.city ul li', function(e) {
 		$("#data .indicators .tabs-wrapper .filters .select.city span").text($(this).text());
@@ -58,14 +45,6 @@ Indicator.prototype.onReady = function(){
 		indicatorObject.drawSimbols();
 		indicatorObject.drawChart();
 		
-		// if($(this).text() == "Toda Andalucía"){
-		// 	$(".indicators-table tr").show();
-		// }else{
-		// 	$(".indicators-table tr").hide();
-		// 	$(".indicators-table tr[city='" + $(this).text() + "']").show();
-		// }
-		// indicatorObject.drawSimbols();
-	 //    indicatorObject.drawChart();
 	});
 
 	$("#data").on('click', '.indicators .tabs-wrapper .filters .select.town ul li', function(e) {
@@ -121,21 +100,23 @@ Indicator.prototype.drawSimbols = function(){
         var lat = $(tr[i]).attr("lat");
         var lng = $(tr[i]).attr("lng");
         var value = parseInt($(tr[i]).find(".col-3").text());
-        var city = $(tr[i]).attr('city')
-        var town = $(tr[i]).attr('town')
+        var city = $(tr[i]).attr('city');
+        var town = $(tr[i]).attr('town');
+        var neigh = $(tr[i]).attr('neigh');
         if(value > 0){
             var circle = new L.CircleMarker([lat,lng], {
                radius: (30 * value)/umbral,
-               fillColor: "#587BFF",
-               color: "#c5cde5",
+               fillColor: "#5252e9",
+               color: "#5252e9",
                opacity: 1,
-               fillOpacity: 1,
+               fillOpacity: 0.8,
                weight: 1,
                clickable: true,
                value : value,
             });
             
-        	circle.bindPopup(town + " : " + value.toString());
+        	circle.bindPopup('<div class="header"><span>Barriada<br></span>' + neigh + ', ' + town + '</div>' +
+        						'<div class="content">' + $("#data h3").text() + '<br><span>' + value.toString() + '</span>' + '</div>', {className: 'index_popup ' + $("#data h3").attr("class")});
 
             featureGroup.addLayer(circle);
         }

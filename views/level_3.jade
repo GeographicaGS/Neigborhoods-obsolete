@@ -1,0 +1,997 @@
+.table-wrap
+	table.indicators-table
+		tr(class='table_header')
+			th Datos generales
+			th Valor
+		tr
+			td Provincia
+			td #{level3SupNeigh.provincia}
+		tr
+			td Código barriada
+			td #{level3SupNeigh.nombrebloq}
+		tr
+			td Sección censal
+			td #{level3SupNeigh.secciones}
+		tr
+			td Promotor
+			td #{level3SupNeigh.promotor}
+		tr
+			td Arquitecto
+			td #{level3SupNeigh.arquitecto}
+		tr
+			td Año de finalización
+			td #{level3SupNeigh.agno_fin}
+		tr
+			td Área (m<sup>2</sup>) area
+			td #{level3SupNeigh.area}
+		tr
+			td Número viviendas
+			td #{level3SupNeigh.num_viv}
+		tr
+			td Densidad viviendas (hab/m<sup>2</sup>) dens_viv
+			td #{level3SupNeigh.dens_viv}
+		tr
+			td Tamaño medio hogar (hab/viv)
+			td #{level3SupNeigh.hab_viv}
+		tr
+			td Volumen edificado
+			td #{level3SupNeigh.vol_edific}
+		tr
+			td Superficie edificada
+			td #{level3SupNeigh.sup_edific}
+		tr
+			td Superficie jardines, AR y calles peatonales
+			td #{level3SupNeigh.sup_s_traf}
+		tr
+			td Tipología edificatoria predominante
+			td #{level3SupNeigh.tipologia}
+		tr
+			td Otras tipologías existentes
+			td #{level3SupNeigh.otras_tip_}
+		tr
+			td Propiedad de las viviendas
+			td #{level3SupNeigh.propiedad_}
+
+	table.indicators-table
+		tr(class='table_header')
+			th Datos socioeconómicos
+			th Valor
+		tr(class='table_sub_header')
+			th(colspan="2") Tipología de vivienda
+		tr
+			td Viviendas principales (%)
+			td #{level3SupNeigh.vv_viviend}
+		tr
+			td Viviendas secundarias (%)
+			td #{level3SupNeigh.vv_vivie_1}
+		tr
+			td Viviendas vacías (%)
+			td #{level3SupNeigh.vv_vivie_2}
+		tr
+			td Índice de viviendas vacías (Sobre 5)
+			td #{level3SupNeigh.ind_vv}
+		tr(class='table_sub_header')
+			th(colspan="2") Ocupación
+		tr
+			td Ocupados (%)
+			td #{level3SupNeigh.oc_ocupado}
+		tr
+			td Estudiantes (%)
+			td #{level3SupNeigh.oc_estudia}
+		tr
+			td Desempleados (%)
+			td #{level3SupNeigh.oc_desempl}
+		tr
+			td Subsidiarios/rentistas (%)
+			td #{level3SupNeigh.oc_subs_re}
+		tr
+			td Otra situación (%)
+			td #{level3SupNeigh.oc_otros}
+		tr
+			td Índice de ocupación (Sobre 5)
+			td #{level3SupNeigh.ind_oc}
+		tr(class='table_sub_header')
+			th(colspan="2") Edad de la población
+		tr
+			td 65 o más años  (%)
+			td #{level3SupNeigh.ed_65}
+		tr
+			td Índice de edad de la población (Sobre 5)
+			td #{level3SupNeigh.ind_ed}
+		tr(class='table_sub_header')
+			th(colspan="2") Inmigración
+		tr
+			td Extranjeros (%)
+			td #{level3SupNeigh.in_extranj}
+		tr
+			td Índice de inmigración (Sobre 5)
+			td #{level3SupNeigh.ind_in}
+		tr(class='table_sub_header')
+			th(colspan="2") Nivel de estudios
+		tr
+			td Analfabetos  (%)
+			td #{level3SupNeigh.ne_analfab}
+		tr
+			td Sin estudios (%)
+			td #{level3SupNeigh.ne_sin_est}
+		tr
+			td Primer grado (%)
+			td #{level3SupNeigh.ne_est_1_g}
+		tr
+			td Segundo grado (%)
+			td #{level3SupNeigh.ne_est_2_g}
+		tr
+			td Tercer grado (%)
+			td #{level3SupNeigh.ne_est_3_g}
+		tr
+			td No es aplicable (%)
+			td #{level3SupNeigh.ne_no_apli}
+		tr
+			td Índice de nivel de estudios (Sobre 5)
+			td #{level3SupNeigh.ind_ne}
+		tr(class='table_sub_header')
+			th(colspan="2") Precio medio de la vivienda
+		tr
+			td Precio medio vivienda ciudad
+			td #{level3SupNeigh.pv_precio_}
+		tr
+			td Precio medio vivienda barriada
+			td #{level3SupNeigh.pv_preci_1}
+		tr
+			td Precio viviendas más barato (%)
+			td #{level3SupNeigh.pv_preci_2}
+		tr
+			td Índice precio de la vivienda (Sobre 5)
+			td #{level3SupNeigh.ind_pv}
+		tr(class='table_sub_header')
+			th(colspan="2") Totales – Datos socioeconómicos
+		tr
+			td Total índices socioeconómicos (Sobre 30)
+			td #{level3SupNeigh.total_ind_}
+		tr
+			td Clasificación de obsolescencia socioeconómica
+			td #{level3SupNeigh.clase_obs_}
+		tr(class='table_sub_header')
+			th(colspan="2") Espacios libres - Accesibilidad
+		tr
+			td Mala accesibilidad calles (%)
+			td #{level3SupNeigh.el_acc_mal}
+		tr
+			td Mala accesibilidad Jardines y Áreas Recreativas (%)
+			td #{level3SupNeigh.el_acc_m_1}
+		tr
+			td Índice de accesibilidad (Sobre 10)
+			td #{level3SupNeigh.ind_el_acc}
+
+	table.indicators-table
+		tr(class='table_header')
+			th Datos físicos
+			th Valor
+		tr(class='table_sub_header')
+			th(colspan="2") Espacios libres – Posibilidad de uso
+		tr
+			td Mal estado y mantenimiento de jardines y AR (%)
+			td #{level3SupNeigh.el_pu_mal_}
+		tr
+			td Mal ajardinamiento de jardines y AR (%)
+			td #{level3SupNeigh.el_pu_ma_1}
+		tr
+			td Calles con mobiliario urbano insuficiente (%)
+			td #{level3SupNeigh.el_pu_mob_}
+		tr
+			td Jardines y AR con mobiliario urbano insuficiente (%)
+			td #{level3SupNeigh.el_pu_mo_1}
+		tr
+			td Ocupación indebida de espacios peatonales (%)
+			td #{level3SupNeigh.el_pu_ocup}
+		tr
+			td Índice de posibilidad de uso (%)
+			td #{level3SupNeigh.Ind_el_pu}
+		tr(class='table_sub_header')
+			th(colspan="2") Movilidad – Cobertura transporte público
+		tr
+			td Superficie cubierta por transporte público (m<sup>2</sup>) mov_ctp_su
+			td #{level3SupNeigh.mov_ctp_su}
+		tr
+			td Superficie NO cubierta por transporte público (%)
+			td #{level3SupNeigh.mov_ctp__1}
+		tr
+			td Frecuencia de paso laborables (min)
+			td #{level3SupNeigh.mov_ctp_fr}
+		tr
+			td Frecuencia de paso festivos (min)
+			td #{level3SupNeigh.mov_ctp__2}
+		tr
+			td Indicador cobertura transporte público (sobre 5)
+			td #{level3SupNeigh.ind_mov_ct}
+		tr(class='table_sub_header')
+			th(colspan="2") Complejidad urbana – Cobertura equipamientos
+		tr
+			td Superficie cubierta cultural (m<sup>2</sup>) cu_cob_eq_
+			td #{level3SupNeigh.cu_cob_eq_}
+		tr
+			td Sup. No cubierta culturales (%)
+			td #{level3SupNeigh.cu_cob_e_1}
+		tr
+			td Superficie cubierta deportivos (m<sup>2</sup>) cu_cob_e_2
+			td #{level3SupNeigh.cu_cob_e_2}
+		tr
+			td Sup. No cubierta deportivos (%)
+			td #{level3SupNeigh.cu_cob_e_3}
+		tr
+			td Superficie cubierta Infantil 1º (m<sup>2</sup>) cu_cob_e_4
+			td #{level3SupNeigh.cu_cob_e_4}
+		tr
+			td Sup. No cubierta educativos infantil 1º (%)
+			td #{level3SupNeigh.cu_cob_e_5}
+		tr
+			td Superficie cubierta Infantil 2º y primaria (m<sup>2</sup>) cu_cob_e_6
+			td #{level3SupNeigh.cu_cob_e_6}
+		tr
+			td Sup. No cubierta educativos infantil 2º y primaria (%)
+			td #{level3SupNeigh.cu_cob_e_7}
+		tr
+			td Superficie cubierta Secundaria, Bachiller y FP (m<sup>2</sup>) cu_cob_e_8
+			td #{level3SupNeigh.cu_cob_e_8}
+		tr
+			td Sup. No cubierta educativos secundaria, bachiller, fp (%)
+			td #{level3SupNeigh.cu_cob_e_9}
+		tr
+			td Superficie cubierta salud (m<sup>2</sup>) cu_cob_e10
+			td #{level3SupNeigh.cu_cob_e10}
+		tr
+			td Sup. No cubierta salud (%)
+			td #{level3SupNeigh.cu_cob_e11}
+		tr
+			td Superficie cubierta Bienestar social (m<sup>2</sup>) cu_cob_e12
+			td #{level3SupNeigh.cu_cob_e12}
+		tr
+			td Sup. No cubierta bienestar social (%)
+			td #{level3SupNeigh.cu_cob_e13}
+		tr
+			td Índice de cobertura equipamientos (sobre 5)
+			td #{level3SupNeigh.ind_cu_cob}
+		tr(class='table_sub_header')
+			th(colspan="2") Complejidad urbana – Dotación comercial
+		tr
+			td Evolución actividad comercial
+			td #{level3SupNeigh.cu_dot_com}
+		tr
+			td Comercio de proximidad
+			td #{level3SupNeigh.cu_dot_c_1}
+		tr
+			td Supermercado o mercado de abastos
+			td #{level3SupNeigh.cu_dot_c_2}
+		tr
+			td Índice de complejidad urbana (sobre 10)
+			td #{level3SupNeigh.ind_cu_dot}
+		tr(class='table_sub_header')
+			th(colspan="2") Edificación - Estado
+		tr
+			td Nº de portales examinados
+			td #{level3SupNeigh.ed_est_num}
+		tr
+			td Nº de portales en buen estado
+			td #{level3SupNeigh.ed_est_n_1}
+		tr
+			td Bloques en mal estado
+			td #{level3SupNeigh.ed_est_blo}
+		tr
+			td Índice de estado de edificación (sobre 20)
+			td #{level3SupNeigh.ind_ed_est}
+		tr(class='table_sub_header')
+			th(colspan="2") Edificación - Accesibilidad
+		tr
+			td Nº de portales accesibles
+			td #{level3SupNeigh.ed_acc_num}
+		tr
+			td Bloques no accesibles
+			td #{level3SupNeigh.ed_acc_blo}
+		tr
+			td Índice de accesibilidad de edificación (sobre 10)
+			td #{level3SupNeigh.ind_ed_acc}
+		tr(class='table_sub_header')
+			th(colspan="2") Factores agravantes - Barreras urbanas
+		tr
+			td Barrera urbana 1 Tipo
+			td #{level3SupNeigh.fa_barr_ur}
+		tr
+			td Barrera urbana 1 Posición
+			td #{level3SupNeigh.fa_barr__1}
+		tr
+			td Barrera urbana 2 Tipo
+			td #{level3SupNeigh.fa_barr__2}
+		tr
+			td Barrera urbana 2 Posición
+			td #{level3SupNeigh.fa_barr__3}
+		tr
+			td Índice de barreras urbanas (Sobre 10)
+			td #{level3SupNeigh.ind_fa_bar}
+		tr(class='table_sub_header')
+			th(colspan="2") Totales – Datos físicos
+		tr
+			td Total índices físicos (Sobre 70)
+			td #{level3SupNeigh.total_in_1}
+		tr
+			td Clasificación de Obsolescencia física
+			td #{level3SupNeigh.clase_ob_1}
+
+	table.indicators-table
+		tr(class='table_header')
+			th Totales – Datos socioeconómicos y físicos
+			th Valor
+		tr
+			td Total datos socioeconómicos y físicos (Sobre 100)
+			td #{level3SupNeigh.total_ind}
+		tr
+			td Clasificación de Obsolescencia
+			td #{level3SupNeigh.total_clas}
+
+	table.indicators-table
+		tr(class='table_header')
+			th Datos energéticos
+			th Valor
+		tr(class='table_sub_header')
+			th(colspan="2") Datos meteorológicos y climáticos
+		tr
+			td Zona climática
+			td #{level3SupNeigh.dm_zona_cl }
+		tr
+			td Altitud (m)
+			td #{level3SupNeigh.dm_altitud}
+		tr
+			td Velocidad media del viento dominante (m/s)
+			td #{level3SupNeigh.dm_vel_med}
+		tr
+			td Dirección del viento dominante
+			td #{level3SupNeigh.dm_dir_vie}
+		tr
+			td Temperatura seca exterior mínima, percentil 99 % (ºC)
+			td #{level3SupNeigh.dm_tse_min}
+		tr
+			td Temperatura seca exterior máxima, percentil 1 % (ºC)
+			td #{level3SupNeigh.dm_tse_max}
+		tr
+			td Temperatura húmeda coincidente (ºC)
+			td #{level3SupNeigh.dm_temp_hu}
+		tr
+			td Oscilación media diaria, verano (OMD) (ºC)
+			td #{level3SupNeigh.dm_omd_ver}
+		tr
+			td Oscilación media anual (OMA) (ºC)
+			td #{level3SupNeigh.dm_omd_anu}
+		tr(class='table_sub_header')
+			th(colspan="2") Datos de la envolvente térmica - parámetros característicos
+		tr
+			td Fachadas
+			td #{level3SupNeigh.de_fachad}
+		tr
+			td Cubiertas
+			td #{level3SupNeigh.de_cubier}
+		tr
+			td Forjados en contacto con espacio no habitable
+			td #{level3SupNeigh.de_forjad}
+		tr
+			td Suelos en contacto con el aire exterior
+			td #{level3SupNeigh.de_suelos}
+		tr
+			td Suelos en contacto con el terreno
+			td #{level3SupNeigh.de_suel_1 }
+		tr
+			td Medianeras
+			td #{level3SupNeigh.de_median}
+		tr
+			td Particiones interiores con zonas comunes
+			td #{level3SupNeigh.de_partic}
+		tr(class='table_sub_header')
+			th(colspan="2") Datos de la envolvente térmica - Huecos
+		tr
+			td Huecos - características
+			td #{level3SupNeigh.de_huecos}
+		tr
+			td Huecos - transmitancias
+			td #{level3SupNeigh.de_huec_1}
+		tr(class='table_sub_header')
+			th(colspan="2") Datos de la envolvente térmica  - Puentes térmicos
+		tr
+			td Pilares en fachada
+			td #{level3SupNeigh.de_pt_pila}
+		tr
+			td Número de pilares en fachada
+			td #{level3SupNeigh.de_pt_num_}
+		tr
+			td Frente de forjado
+			td #{level3SupNeigh.de_pt_fren}
+		tr
+			td Caja de persiana
+			td #{level3SupNeigh.de_pt_caja}
+		tr(class='table_sub_header')
+			th(colspan="2") Indicadores Geométricos
+		tr
+			td Superficie de envolvente térmica (m<sup>2</sup>) ig_sup_env
+			td #{level3SupNeigh.ig_sup_env}
+		tr
+			td Cubierta en la envolvente (%) ig_porc_cu
+			td #{level3SupNeigh.ig_porc_cu}
+		tr
+			td Fachada en la envolvente (%)
+			td #{level3SupNeigh.ig_porc_fa}
+		tr
+			td Cerramiento vertical opaco en la fachada
+			td #{level3SupNeigh.ig_porc_ce}
+		tr
+			td Hueco global en la fachada (%)
+			td #{level3SupNeigh.ig_porc_hu}
+		tr
+			td Hueco norte en la fachada (%)
+			td #{level3SupNeigh.ig_porc__1}
+		tr
+			td Hueco noreste en la fachada (%)
+			td #{level3SupNeigh.ig_porc__2}
+		tr
+			td Hueco este en la fachada (%)
+			td #{level3SupNeigh.ig_porc__3}
+		tr
+			td Hueco sureste en la fachada (%)
+			td #{level3SupNeigh.ig_porc__4}
+		tr
+			td Hueco sur en la fachada (%)
+			td #{level3SupNeigh.ig_porc__5}
+		tr
+			td Hueco suroeste en la fachada (%)
+			td #{level3SupNeigh.ig_porc__6}
+		tr
+			td Hueco oeste en la fachada (%)
+			td #{level3SupNeigh.ig_porc__7}
+		tr
+			td Hueco noroeste en la fachada (%)
+			td #{level3SupNeigh.ig_porc__8}
+		tr
+			td Factor de forma (superficie envolvente/volumen) (m<sup>-1</sup>) ig_factor
+			td #{level3SupNeigh.ig_factor}
+		tr
+			td Superficie útil habitable de las viviendas (m<sup>2</sup>) ig_sup_uti
+			td #{level3SupNeigh.ig_sup_uti}
+		tr
+			td Superficie útil habitable de las zonas comunes de circulación (m<sup>2</sup>) ig_sup_u_1
+			td #{level3SupNeigh.ig_sup_u_1}
+		tr
+			td Superficie útil total (m<sup>2</sup>)
+			td #{level3SupNeigh.ig_sup_u_2}
+		tr(class='table_sub_header')
+			th(colspan="2") Certificación energética (ce3x): instalaciones térmicas existentes y predominantes
+		tr
+			td Sistema predominante de ACS
+			td #{level3SupNeigh.ce_sist_ac}
+		tr
+			td Sistema predominante de calefacción
+			td #{level3SupNeigh.ce_sist_ca}
+		tr
+			td Sistema predominante de refrigeración
+			td #{level3SupNeigh.ce_sist_re}
+		tr
+			td Instalaciones de energía renovable
+			td #{level3SupNeigh.ce_inst_en}
+		tr
+			td Generación de electricidad mediante renovables
+			td #{level3SupNeigh.ce_generac}
+		tr
+			td Calificación energética global del edificio
+			td #{level3SupNeigh.ce_cal_e_g}
+		tr
+			td Calificación parcial de la demanda energética de calefacción
+			td #{level3SupNeigh.ce_cal_e_p}
+		tr
+			td Calificación parcial de la demanda energética de refrigeración
+			td #{level3SupNeigh.ce_cal_e_1}
+		tr
+			td Calificación parcial del consumo de energía primaria
+			td #{level3SupNeigh.ce_cal_e_2}
+
+	table.indicators-table
+		tr(class='table_header')
+			th Datos de la estructura
+			th Valor
+		tr(class='table_sub_header')
+			th(colspan="2") Estructura vertical
+		tr
+			td Tipo de muro de carga
+			td #{level3SupNeigh.ev_muro}
+		tr
+			td Tipo de pilares
+			td #{level3SupNeigh.ev_pilares}
+		tr(class='table_sub_header')
+			th(colspan="2") Estructura horizontal planta tipo
+		tr
+			td Tipo
+			td #{level3SupNeigh.eh_pt_tipo}
+		tr
+			td Estructura principal
+			td #{level3SupNeigh.eh_pt_estr}
+		tr
+			td Elementos secundarios forjado
+			td #{level3SupNeigh.eh_pt_secu}
+		tr
+			td Entrevigado forjado
+			td #{level3SupNeigh.eh_pt_entr}
+		tr(class='table_sub_header')
+			th(colspan="2") Estructura horizontal planta baja
+		tr
+			td Tipo
+			td #{level3SupNeigh.eh_p0_tipo}
+		tr
+			td Estructura principal
+			td #{level3SupNeigh.eh_p0_estr}
+		tr
+			td Elementos secundarios forjado
+			td #{level3SupNeigh.eh_p0_secu}
+		tr
+			td Entrevigado forjado
+			td #{level3SupNeigh.eh_p0_entr}
+		tr(class='table_sub_header')
+			th(colspan="2") Estructura de cubierta
+		tr
+			td Posición
+			td #{level3SupNeigh.ec_posicio}
+		tr
+			td Tipo
+			td #{level3SupNeigh.ec_tipo}
+		tr
+			td Estructura principal
+			td #{level3SupNeigh.ec_estr_pp}
+		tr
+			td Elementos secundarios forjado
+			td #{level3SupNeigh.ec_secunda}
+		tr
+			td Entrevigado forjado
+			td #{level3SupNeigh.ec_entrevi}
+		tr
+			td Observaciones
+			td #{level3SupNeigh.e_observac}
+
+	table.indicators-table
+		tr(class='table_header')
+			th Datos de la cimentación
+			th Valor
+		tr
+			td Tipo
+			td #{level3SupNeigh.ci_tipo}
+		tr
+			td Tipo cimentación superficial
+			td #{level3SupNeigh.ci_tipo_ci}
+		tr
+			td Tipo cimentación profunda
+			td #{level3SupNeigh.ci_tipo__1}
+		tr
+			td Sistemas de contención
+			td #{level3SupNeigh.ci_sist_co}
+		tr
+			td Observaciones
+			td #{level3SupNeigh.ci_observa}
+
+	table.indicators-table
+		tr(class='table_header')
+			th Datos de los cerramientos
+			th Valor
+		tr(class='table_sub_header')
+			th(colspan="2") Cerramientos verticales
+		tr
+			td cv1_Nombre
+			td #{level3SupNeigh.cv1_nombre}
+		tr
+			td cv1_Tipo
+			td #{level3SupNeigh.cv1_tipo}
+		tr
+			td cv1_Aislamiento térmico
+			td #{level3SupNeigh.cv1_aislam}
+		tr
+			td cv1_Composición (de exterior a interior)
+			td #{level3SupNeigh.cv1_compos}
+		tr
+			td cv2_Nombre
+			td #{level3SupNeigh.cv2_nombre}
+		tr
+			td cv2_Tipo
+			td #{level3SupNeigh.cv2_tipo}
+		tr
+			td cv2_Aislamiento térmico
+			td #{level3SupNeigh.cv2_aislam}
+		tr
+			td cv2_Composición (de exterior a interior)
+			td #{level3SupNeigh.cv2_compos}
+		tr
+			td cv3_Nombre
+			td #{level3SupNeigh.cv3_nombre}
+		tr
+			td cv3_Tipo
+			td #{level3SupNeigh.cv3_tipo}
+		tr
+			td cv3_Aislamiento térmico
+			td #{level3SupNeigh.cv3_aislam}
+		tr
+			td cv3_Composición (de exterior a interior)
+			td #{level3SupNeigh.cv3_compos}
+		tr
+			td cv4_Nombre
+			td #{level3SupNeigh.cv4_nombre}
+		tr
+			td cv4_Tipo
+			td #{level3SupNeigh.cv4_tipo}
+		tr
+			td cv4_Aislamiento térmico
+			td #{level3SupNeigh.cv4_aislam}
+		tr
+			td cv4_Composición (de exterior a interior)
+			td #{level3SupNeigh.cv4_compos}
+		tr
+			td Observaciones
+			td #{level3SupNeigh.cv_observa}
+		tr(class='table_sub_header')
+			th(colspan="2") Cubierta
+		tr
+			td Tipo
+			td #{level3SupNeigh.cu_tipo}
+		tr
+			td Posición
+			td #{level3SupNeigh.cu_posicio}
+		tr
+			td Aislamiento térmico
+			td #{level3SupNeigh.cu_aislam_}
+		tr
+			td Capa impermeabilizante
+			td #{level3SupNeigh.cu_capa_im}
+		tr
+			td Cámara de aire, tipo
+			td #{level3SupNeigh.cu_tipo_ca}
+		tr
+			td Composición (de exterior a interior)
+			td #{level3SupNeigh.cu_composi}
+		tr
+			td Observaciones
+			td #{level3SupNeigh.cu_observa}
+		tr(class='table_sub_header')
+			th(colspan="2") Forjados en contacto con espacio no habitable
+		tr
+			td fnh1_Nombre
+			td #{level3SupNeigh.fnh1_nombr}
+		tr
+			td fnh1_Uso espacio no habitable
+			td #{level3SupNeigh.fnh1_uso_e}
+		tr
+			td fnh1_Aislamiento térmico
+			td #{level3SupNeigh.fnh1_aisla}
+		tr
+			td fnh1_Cámara de aire, tipo
+			td #{level3SupNeigh.fnh1_tipo_}
+		tr
+			td fnh1_Composición (de arriba abajo)
+			td #{level3SupNeigh.fnh1_compo}
+		tr
+			td fnh2_Nombre
+			td #{level3SupNeigh.fnh2_nombr}
+		tr
+			td fnh2_Uso espacio no habitable
+			td #{level3SupNeigh.fnh2_uso_e}
+		tr
+			td fnh2_Aislamiento térmico
+			td #{level3SupNeigh.fnh2_aisla}
+		tr
+			td fnh2_Cámara de aire, tipo
+			td #{level3SupNeigh.fnh2_tipo_}
+		tr
+			td fnh2_Composición (de arriba abajo)
+			td #{level3SupNeigh.fnh2_compo}
+		tr
+			td Observaciones
+			td #{level3SupNeigh.fnh_observ}
+		tr(class='table_sub_header')
+			th(colspan="2") Suelo en contacto con el aire exterior
+		tr
+			td Nombre
+			td #{level3SupNeigh.fe_nombre}
+		tr
+			td Aislamiento térmico
+			td #{level3SupNeigh.fe_aislam_}
+		tr
+			td Composición (de arriba abajo)
+			td #{level3SupNeigh.fe_composi}
+		tr
+			td Observaciones
+			td #{level3SupNeigh.fe_observa}
+		tr(class='table_sub_header')
+			th(colspan="2") Suelo en contacto con el terreno
+		tr
+			td Nombre
+			td #{level3SupNeigh.ft_nombre}
+		tr
+			td Aislamiento térmico
+			td #{level3SupNeigh.ft_aislam_}
+		tr
+			td Composición (de arriba abajo)
+			td #{level3SupNeigh.ft_composi}
+		tr
+			td Observaciones
+			td #{level3SupNeigh.ft_observa}
+		tr(class='table_sub_header')
+			th(colspan="2") Huecos
+		tr
+			td h1_Nombre
+			td #{level3SupNeigh.h1_nombre}
+		tr
+			td h1_Tipo de vidrio
+			td #{level3SupNeigh.h1_tipo_vi}
+		tr
+			td h1_Composición (de exterior a interior)
+			td #{level3SupNeigh.h1_composi}
+		tr
+			td h1_Tipo de carpintería
+			td #{level3SupNeigh.h1_tipo_ca}
+		tr
+			td h1_Protecciones solares, tipo
+			td #{level3SupNeigh.h1_tipo_pr}
+		tr
+			td h1_Retranqueo del hueco con respecto a la fachada (mm)
+			td #{level3SupNeigh.h1_retranq}
+		tr
+			td Observaciones
+			td #{level3SupNeigh.h_observac}
+
+	table.indicators-table
+		tr(class='table_header')
+			th Datos de las instalaciones
+			th Valor
+		tr(class='table_sub_header')
+			th(colspan="2") Red de evacuación de aguas
+		tr
+			td Tipo de red
+			td #{level3SupNeigh.re_tipo_re}
+		tr
+			td Tipo de bajantes
+			td #{level3SupNeigh.re_tipo_ba}
+		tr
+			td Tipo de colectores
+			td #{level3SupNeigh.re_tipo_co}
+		tr
+			td Solución
+			td #{level3SupNeigh.re_solucio}
+		tr(class='table_sub_header')
+			th(colspan="2") Red de abastecimiento de aguas
+		tr
+			td Tipo de contador
+			td #{level3SupNeigh.ra_tipo_co}
+		tr
+			td Solución
+			td #{level3SupNeigh.ra_solucio}
+		tr(class='table_sub_header')
+			th(colspan="2") Instalación eléctrica
+		tr
+			td Tipo de contador
+			td #{level3SupNeigh.ie_tipo_co}
+		tr
+			td Solución
+			td #{level3SupNeigh.ie_solucio}
+		tr(class='table_sub_header')
+			th(colspan="2") Instalación calefacción
+		tr
+			td Sistema colectivo
+			td #{level3SupNeigh.ic_sist_co}
+		tr
+			td Sistema colectivo, tipo de sistema
+			td #{level3SupNeigh.ic_tipo_si}
+		tr
+			td Sistema colectivo, tipo de producción
+			td #{level3SupNeigh.ic_producc}
+		tr
+			td Solución
+			td #{level3SupNeigh.ic_solucio}
+		tr(class='table_sub_header')
+			th(colspan="2") Instalación ACS
+		tr
+			td Sistema colectivo
+			td #{level3SupNeigh.iacs_sist_}
+		tr
+			td Sistema colectivo, tipo de sistema
+			td #{level3SupNeigh.iacs_tipo_}
+		tr
+			td Sistema colectivo, combustible
+			td #{level3SupNeigh.iacs_combu}
+		tr
+			td Sistema colectivo, captadores solares
+			td #{level3SupNeigh.iacs_capta}
+		tr
+			td Sistema individual predominante
+			td #{level3SupNeigh.iacs_sis_1}
+		tr
+			td Solución
+			td #{level3SupNeigh.iacs_soluc}
+		tr(class='table_sub_header')
+			th(colspan="2") Instalaciones refrigeración
+		tr
+			td Sistema colectivo
+			td #{level3SupNeigh.ir_sist_co}
+		tr
+			td Sistema colectivo, tipo
+			td #{level3SupNeigh.ir_tipo_si}
+		tr
+			td Sistema colectivo, descripción
+			td #{level3SupNeigh.ir_descrip}
+		tr
+			td Sistema individual, nº de aparatos vistos en fachada
+			td #{level3SupNeigh.ir_aparato}
+		tr
+			td Solución
+			td #{level3SupNeigh.ir_solucio}
+		tr(class='table_sub_header')
+			th(colspan="2") Instalación ventilación
+		tr
+			td Sistema locales húmedos
+			td #{level3SupNeigh.iv_sist_lo}
+		tr
+			td Sistema aparcamientos
+			td #{level3SupNeigh.iv_sist_ap}
+		tr(class='table_header')
+			th (¿?)
+			th Valor
+		tr
+			td Protección contra incendios
+			td #{level3SupNeigh.i_pci}
+		tr
+			td Protección contra el rayo (pararayos)
+			td #{level3SupNeigh.i_pararray}
+		tr(class='table_sub_header')
+			th(colspan="2") Instalación ICT
+		tr
+			td Solución
+			td #{level3SupNeigh.ict_soluci}
+		tr
+			td Canalización
+			td #{level3SupNeigh.ict_canali}
+		tr(class='table_header')
+			th (¿?)
+			th Valor
+		tr
+			td Observaciones
+			td #{level3SupNeigh.i_observac}
+
+	table.indicators-table
+		tr(class='table_header')
+			th Estado de la edificación
+			th Valor
+		tr
+			td Intervención de reforma colectiva
+			td #{level3SupNeigh.ee_reforma}
+		tr
+			td Alcance y descripción de la reforma
+			td #{level3SupNeigh.ee_refor_1}
+
+	if level3GardenSup
+		table.indicators-table
+			tr(class='table_header')
+				th Jardines
+				th Valor
+			tr
+				td Código
+				td(class="upper") #{level3GardenSup.key_bloq}
+			tr
+				td Superficie (m<sup>2</sup>)
+				td #{level3GardenSup.area}
+			tr
+				td Acccesible (1 = Sí) (0 = No)
+
+				td #{level3GardenSup.accesible}
+			tr
+				td Mobiliario (1 = Sí) (0 = No)
+
+				td #{level3GardenSup.mobiliario}
+			tr
+				td Estado
+				td #{level3GardenSup.estado}
+			tr
+				td Ajardinamiento
+				td #{level3GardenSup.ajardinami}
+	
+	if level3PartyAreas
+		table.indicators-table
+			tr(class='table_header')
+				th Áreas de recreo
+				th Valor
+			tr
+				td Código
+				td(class="upper") #{level3PartyAreas.key_bloq}
+			tr
+				td Superficie (m<sup>2</sup>)
+				td #{level3PartyAreas.area}
+			tr
+				td Acccesible (1 = Sí) (0 = No)
+				td #{level3PartyAreas.accesible}
+			tr
+				td Mobiliario (1 = Sí) (0 = No)
+				td #{level3PartyAreas.mobiliario}
+			tr
+				td Estado
+				td #{level3PartyAreas.estado}
+			tr
+				td Ajardinamiento
+				td #{level3PartyAreas.ajardinami}
+	
+	if level3RoadsLong
+		table.indicators-table
+			tr(class='table_header')
+				th Longitud vías
+				th Valor
+			tr
+				td Código
+				td(class="upper") #{level3RoadsLong.key_bloq}
+			tr
+				td Longitud (m)
+				td #{level3RoadsLong.longitud}
+
+	if level3WalkerLong
+		table.indicators-table
+			tr(class='table_header')
+				th Longitud calles peatonales
+				th Valor
+			tr
+				td Código
+				td(class="upper") #{level3WalkerLong.key_bloq}
+			tr
+				td Longitud (m)
+				td #{level3WalkerLong.longitud}
+	
+	if level3WalkerStreets
+		table.indicators-table
+			tr(class='table_header')
+				th Calles peatonales
+				th Valor
+			tr
+				td Código
+				td #{level3WalkerStreets.key_bloq}
+			tr
+				td Superficie (m<sup>2</sup>)
+				td #{level3WalkerStreets.area}
+			tr
+				td Acccesible (1 = Sí) (0 = No)
+				td #{level3WalkerStreets.accesible}
+			tr
+				td Mobiliario (1 = Sí) (0 = No)
+				td #{level3WalkerStreets.mobiliario}
+	
+	if level3MixedStreets
+		table.indicators-table
+			tr(class='table_header')
+				th Calles de circulación mixta
+				th Valor
+			tr
+				td Código
+				td #{level3MixedStreets.key_bloq}
+			tr
+				td Superficie (m<sup>2</sup>)
+				td #{level3MixedStreets.area}
+			tr
+				td Acccesible (1 = Sí) (0 = No)
+				td #{level3MixedStreets.accesible}
+			tr
+				td Mobiliario (1 = Sí) (0 = No)
+				td #{level3MixedStreets.mobiliario}
+	
+	if level3BuildingSup
+		table.indicators-table
+			tr(class='table_header')
+				th Edificaciones
+				th Valor
+			tr
+				td Código
+				td(class="upper") #{level3BuildingSup.key_bloq}
+			tr
+				td Superficie (m<sup>2</sup>)
+				td #{level3BuildingSup.area}
+
+
+
+
+
+
+
+
+
+

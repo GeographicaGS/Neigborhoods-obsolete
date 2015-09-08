@@ -17,6 +17,8 @@ html
             script(src='/js/global.js')
             script(src='/js/family.js')
             script(src='/js/indicator.js')
+            script(src='/js/main_data.js')
+            script(src='/js/data_level.js')
 
         else
             script(src='/js/main.js')
@@ -41,6 +43,15 @@ html
                 h1
                     a(href='/')
                       img(src='images/bo_logo.svg', alt='MBP Proyecto de Investigacion: Intervención en barriadas residenciales obsoletas')
+            
+            nav
+                li(class="active")
+                    a(href="data") Datos
+                    .triangle
+                li
+                    a(href="indicators") Índices de obsolescencia
+                    .triangle
+
             .logo
               a(href='http://www.etsa.us.es/' target="_blank")
                 img(src='images/bo_logo_universidadsevilla.png', alt='Logo Universidad de Sevilla')

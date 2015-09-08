@@ -52,6 +52,42 @@ header {
 		float: left;
 		margin-left: 20px;
 	}//brand
+
+	nav{
+		color: white;
+		display: inline-block;
+		float: left;
+		list-style-type: none;
+		text-transform: uppercase;
+		li{
+			float: left;
+			border:1px solid #55555d;
+			margin-left: 20px;
+			font-size: 16px;
+			padding: 8px 20px;
+			border-radius: 3px;
+
+			&.active{
+				background-color: #d29b31;
+				color:#27272e;
+				border:none;
+				position: relative;
+
+				.triangle{
+					width: 0;
+					height: 0;
+					border-style: solid;
+					border-width: 10px 10px 0 10px;
+					border-color: #d29b31 transparent transparent transparent;
+					position: absolute;
+					bottom: -10px;
+					left: 0;
+					right: 0;
+					margin: auto;
+				}
+			}
+		}
+	}
 	
 	.logo {
 		// float: right;
@@ -436,6 +472,113 @@ h2{
 	color:@boRed;
 }
 
+.back-to-page {
+	float: left;
+	margin-left: 18px;
+	margin-top: 5px;
+	display: block;
+	cursor:pointer;
+	&:hover {
+		opacity:0.5;
+	}
+}
+
+.leaflet-popup{
+	.leaflet-popup-content-wrapper{
+		border-radius: 2px;
+		font-size: 14px;
+		padding: 0;
+		.leaflet-popup-content{
+			margin: 0;
+		}
+	}
+}
+
+.leaflet-popup{
+	&.index_popup{
+		&.socioeconomicos{
+			.header{
+				border-bottom: 1px solid rgb(205, 205, 248);
+				background-color: rgba(81, 81, 233, 0.0980392);
+			}
+		}
+		&.constructivos{
+			.header{
+				background-color: rgba(11, 160, 95, 0.0980392);
+				border-bottom: 1px solid rgb(192, 226, 209);
+			}
+		}
+		&.energeticos{
+			.header{
+				border-bottom: 1px solid rgb(255, 218, 218);
+				background-color: rgba(255, 102, 102, 0.0980392);
+			}
+		}
+		.leaflet-popup-content-wrapper{
+			.leaflet-popup-content{
+				.header{
+					padding: 10px 45px 10px 10px;
+					color:#55555d;
+					line-height: 18px;
+					padding-bottom: 10px;
+					span{
+						font-weight: bold;
+					}
+				}
+				.content{
+					padding: 10px;
+					line-height: 24px;
+					span{
+						font-size: 24px;
+						font-weight: 200;
+					}
+				}
+			}
+		}
+	}
+}
+
+.leaflet-popup{
+	&.indicator_data_poup{
+		.leaflet-popup-content-wrapper{
+			.leaflet-popup-content{
+				.header{
+					padding: 10px 45px 10px 10px;
+					padding-bottom: 10px;
+					border-bottom: 1px solid #dddddf;
+					line-height: 18px;
+					color:#55555d;
+					span{
+						font-weight: bold;
+					}
+				}
+				.content{
+					padding: 10px;
+					line-height: 24px;
+					a{
+						color:#27272e;	
+					}
+				}
+			}
+		}
+	}
+}
+
+.loading{
+	.aside-wrapper{
+		background: url('../images/loading.svg') no-repeat 50% 50%;
+		pointer-events: none;
+		.inner{
+			opacity: 0.2;
+		}
+	}
+}
+
+.upper{
+	text-transform: uppercase;
+}
+
+@import "data.less";
 @import "ind.less";
 @import "table.less";
 @import "chart.less";
