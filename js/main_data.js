@@ -87,9 +87,12 @@ MainData.prototype.onReady = function(){
 	});
 
 	$(".indicators-table tr").unbind().on('click', function(event) {
-		lat = $(this).attr("lat");
-		lng = $(this).attr("lng");
-		mainData.showIndicator($(this).attr("key"),lat,lng);
+		var lat = $(this).attr("lat");
+		var lng = $(this).attr("lng");
+		var key = $(this).attr("key");
+		if(key){
+			mainData.showIndicator($(this).attr("key"),lat,lng);
+		}
 	});
 }
 

@@ -68,6 +68,20 @@ html
         div(class='global_content')
             block content
             div(id="map")
+            div(id="legend")
+                .header
+                    span Leyenda
+                    img(src='images/plus.svg')
+                .content
+                    ul
+                        li.rect Barriada
+                        li.rect Edificación
+                        li.rect Área de recreo
+                        li.rect Jardín
+                        li.rect Calle mixta
+                        li.rect Calle peatonal
+                        li.line Longitud calle peatonal
+                        li.line Longitud vía
 
         include footer.jade
         block js
