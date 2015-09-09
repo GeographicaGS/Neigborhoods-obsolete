@@ -228,6 +228,132 @@ header {
 	height: ~"calc(100% - (92px + 50px))";
 }
 
+#legend{
+	position: absolute;
+	right: 30px;
+	bottom: 70px;
+	background-color: rgba(255, 255, 255, 0.8);
+	// opacity: 0.8;
+	.header{
+		padding: 10px;
+		span{
+			font-size: 14px;
+			line-height: 24px;
+			color: #27272e;
+		}
+		img{
+			width: 10px;
+			height: 10px;
+			float: right;
+			margin-top: 7px;
+			cursor:pointer;
+			-ms-transform: rotate(45deg);
+			-webkit-transform: rotate(45deg);
+			transform: rotate(45deg);
+			&.close{
+				-ms-transform: rotate(0);
+				-webkit-transform: rotate(0);
+				transform: rotate(0);
+			}
+		}
+	}
+	.content{
+		border-top: 1px solid #dddddf;
+		padding: 10px 30px 18px 10px;
+		max-height: 220px;
+		-webkit-transition: max-height .25s, opacity .5s;
+		-moz-transition: max-height .25s, opacity .5s;
+		transition: max-height .25s, opacity .5s;
+
+		&.close{
+			max-height: 0;
+			opacity: 0;
+			padding-bottom: 0;
+			padding-top: 0;
+			// visibility: hidden;
+			// padding: 0;
+			border: none;
+		}
+		ul{
+			li{
+				font-size: 12px;
+				line-height: 24px;
+				color:#55555d;
+				&.rect{
+					&:before{
+						content: '';
+						width: 10px;
+						height: 10px;
+						display: inline-block;
+						margin-right: 10px;
+						
+					}
+				}
+				&.line{
+					&:before{
+						content: '';
+						width: 10px;
+						height: 4px;
+						display: inline-block;
+						margin-right: 10px;
+						position: relative;
+						bottom: 3px;
+					}
+				}
+				&:nth-of-type(1){
+					&:before{
+						background-color: rgba(210, 155, 49, 0.5);
+						border: 1px solid #d29b31;
+					}
+				}
+				&:nth-of-type(2){
+					&:before{
+						background-color: rgba(255, 204, 0, 0.5);
+						border: 1px solid #d29b31;
+						
+					}
+				}
+				&:nth-of-type(3){
+					&:before{
+						background-color: #ff6633;
+						border: 1px solid #ff6633;
+					}
+				}
+				&:nth-of-type(4){
+					&:before{
+						background-color: #59a659;
+						border: 1px solid #3b843c;
+					}
+				}
+				&:nth-of-type(5){
+					&:before{
+						background-color: #665e56;
+						
+					}
+				}
+				&:nth-of-type(6){
+					&:before{
+						background-color: #0099ff;
+						
+					}
+				}
+				&:nth-of-type(7){
+					&:before{
+						background-color: #0066cc;
+						
+					}
+				}
+				&:nth-of-type(8){
+					&:before{
+						background-color: #4f463c;
+						
+					}
+				}
+			}
+		}
+	}
+}
+
 #socioeconomicos {
 	header {
 		background: @boViolet-l;

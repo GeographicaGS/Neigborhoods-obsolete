@@ -14,11 +14,19 @@ Global.prototype.onReady = function(){
     $.ajax({
         url: '/neighborhods_geom', 
         success: function(response) {
+            // var neighborStyle = {
+            //     'color': "#2C3D7F",
+            //     'fillColor': "#587BFF",
+            //     'weight': 2,
+            //     "opacity": 1
+            // };
+
             var neighborStyle = {
-                'color': "#2C3D7F",
-                'fillColor': "#587BFF",
+                'color': "#d29b31",
+                'fillColor': "#d29b31",
                 'weight': 2,
-                "opacity": 1
+                "opacity": 1,
+                "fillOpacity": 0.5
             };
 
             var gardenStyle = {
@@ -69,7 +77,7 @@ Global.prototype.onReady = function(){
                 "fillOpacity": 0.8
             };
 
-            var buildingsStyle = {
+            var neighborSupStyle = {
                 'color': "#d29b31",
                 'fillColor': "#d29b31",
                 'weight': 2,
@@ -77,7 +85,7 @@ Global.prototype.onReady = function(){
                 "fillOpacity": 0.5
             };
 
-            var neighborSupStyle = {
+            var buildingsStyle = {
                 'color': "#d29b31",
                 'fillColor': "#ffcc00",
                 'weight': 1,
@@ -127,7 +135,12 @@ Global.prototype.onReady = function(){
         $('.banner nav li[href="data"]').removeClass('active');
         $('.banner nav li a[href="data"]').closest("li").addClass('active');
         mainData.showIndicator($(this).attr('href'));
-    }); 
+    });
+
+    $("#legend img").click(function() {
+        $(this).toggleClass('close');
+        $("#legend .content").toggleClass('close');
+    });
 }
 
 function onEachFeature(feature, layer) {
