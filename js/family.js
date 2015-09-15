@@ -11,7 +11,7 @@ Family.prototype.onReady = function(){
 
 	$("#index li").click(function(e){
 		$.ajax({
-	        url: '/indicator/' + $(this).attr("id_indicator"), 
+	        url: 'indicator/' + $(this).attr("id_indicator"), 
 	        success: function(response) {
 	        	map.setView(initLatLng,initZoom);
 	        	$("#index").hide()

@@ -12,7 +12,7 @@ Global.prototype.onReady = function(){
     featureGroup = L.featureGroup();
     featureGroup.addTo(map);
     $.ajax({
-        url: '/neighborhods_geom', 
+        url: 'neighborhods_geom', 
         success: function(response) {
             // var neighborStyle = {
             //     'color': "#2C3D7F",

@@ -99,7 +99,7 @@ MainData.prototype.onReady = function(){
 MainData.prototype.showIndicator = function(key,lat,lng){
 	$("#content").addClass('loading');
 	$.ajax({
-        url: '/indicator_level/' + key, 
+        url: 'indicator_level/' + key, 
         success: function(response) {
         	$("#content").removeClass('loading');
         	$("#content").children().remove();
