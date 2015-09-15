@@ -6,8 +6,11 @@ html
         meta(name='author' content='Geographica')
         meta(name='Description' content='#{desc}')
         
-        link(rel='stylesheet', href='/lib/leaflet-0.7.3/leaflet.css')
-        link(rel='stylesheet', href='/stylesheets/style.css')
+        //- link(rel='stylesheet', href='/lib/leaflet-0.7.3/leaflet.css')
+        //- link(rel='stylesheet', href='/stylesheets/style.css')
+
+        link(rel='stylesheet', href='lib/leaflet-0.7.3/leaflet.css')
+        link(rel='stylesheet', href='stylesheets/style.css')
         
         script(src='https://www.google.com/jsapi' type="text/javascript")
 
@@ -21,7 +24,8 @@ html
             script(src='/js/data_level.js')
 
         else
-            script(src='/js/main.js')
+            //- script(src='/js/main.js')
+            script(src='js/main.js')
 
     body()
 
@@ -41,7 +45,7 @@ html
         header(class="banner")
             .brand.logo
                 h1
-                    a(href='/')
+                    a(href='http://www.mbpbarriadasobsoletas.com/')
                       img(src='images/bo_logo.svg', alt='MBP Proyecto de Investigacion: Intervención en barriadas residenciales obsoletas')
             
             nav
