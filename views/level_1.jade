@@ -10,7 +10,7 @@
 			td Área (m<sup>2</sup>)
 			td #{level1.area}
 		tr
-			td Densidad viviendas (hab/m<sup>2</sup>)
+			td Densidad viviendas (viv/m<sup>2</sup>)
 			td #{level1.dens_viv}
 		tr
 			td Número viviendas
@@ -34,22 +34,22 @@
 			th Valor
 		tr
 			td Analfabetos (%)
-			td #{level1.analfabet}
+			td #{(level1.analfabet*100).toFixed(2)}
 		tr
 			td Sin estudios (%)
-			td #{level1.sin_estudi}
+			td #{(level1.sin_estudi*100).toFixed(2)}
 		tr
 			td Primer grado (%)
-			td #{level1.est_1_grad}
+			td #{(level1.est_1_grad*100).toFixed(2)}
 		tr
 			td Segundo grado (%)
-			td #{level1.est_2_grad}
+			td #{(level1.est_2_grad*100).toFixed(2)}
 		tr
 			td Tercer grado (%)
-			td #{level1.est_3_grad}
+			td #{(level1.est_3_grad*100).toFixed(2)}
 		tr
 			td No es aplicable (%)
-			td #{level1.no_aplicab}
+			td #{(level1.no_aplicab*100).toFixed(2)}
 
 	table.indicators-table
 		tr(class='table_header')
@@ -57,22 +57,22 @@
 			th Valor
 		tr
 			td Ocupados (%)
-			td #{level1.ocupados}
+			td #{(level1.ocupados*100).toFixed(2)}
 		tr
 			td Estudiantes (%)
-			td #{level1.estudiant}
+			td #{(level1.estudiant*100).toFixed(2)}
 		tr
 			td Desempleados (%)
-			td #{level1.desemplead}
+			td #{(level1.desemplead*100).toFixed(2)}
 		tr
 			td Subsidiarios/rentistas (%)
-			td #{level1.subsd_rent}
+			td #{(level1.subsd_rent*100).toFixed(2)}
 		tr
 			td Otra situación (%)
-			td #{level1.otra_situa}
+			td #{(level1.otra_situa*100).toFixed(2)}
 		tr
 			td Extranjeros (%)
-			td #{level1.extranjer}
+			td #{(level1.extranjer*100).toFixed(2)}
 
 	table.indicators-table
 		tr(class='table_header')
@@ -80,13 +80,13 @@
 			th Valor
 		tr
 			td Viviendas principales (%)
-			td #{level1.viv_ppales}
+			td #{(level1.viv_ppales*100).toFixed(2)}
 		tr
 			td Viviendas secundarias (%)
-			td #{level1.viv_secund}
+			td #{(level1.viv_secund*100).toFixed(2)}
 		tr
 			td Viviendas vacías (%)
-			td #{level1.viv_vacias}
+			td #{(level1.viv_vacias*100).toFixed(2)}
 		tr
 			td Propiedad
 			td #{level1.propiedad}
