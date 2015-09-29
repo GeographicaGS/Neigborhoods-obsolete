@@ -24,8 +24,10 @@ IndicatorModel.prototype.getLevel_1 = function(id,callback){
 	BaseModel.query(callback,'select n.nom_barr, sub.gid, sub.area, sub.nombrebloq, sub.dens_viv, sub.num_viv, sub.edad_pob, sub.agno_fin,'+ 
 						       'sub.nombr_barr, sub.promotor, sub.arquitecto, sub.analfabet, sub.sin_estudi, sub.est_1_grad,'+
 						       'sub.est_2_grad, sub.est_3_grad, sub.no_aplicab, sub.ocupados, sub.estudiant, sub.desemplead,'+ 
-						       'sub.subsd_rent, sub.otra_situa, sub.extranjer, sub.viv_ppales, sub.viv_secund, sub.viv_vacias,'+ 
-						       'sub.propiedad from nivel_1.barriadas sub inner join data.neighborhoods n on sub.nombrebloq = n.nombrebloq  where sub.nombrebloq = $1', [id]);
+						       'sub.subsd_rent, sub.otra_situa, sub.extranjer, sub.viv_ppales, sub.viv_secund, sub.viv_vacias, '+ 
+						       'sub.propiedad, n.tiene_aplicacion_mbp, n.tiene_ficha_patrimonial, ' +
+						       ' (select count(*) from data.neighborhoods_proyecto where nombrebloq=n.nombrebloq) as num_images' +
+						       ' from nivel_1.barriadas sub inner join data.neighborhoods n on sub.nombrebloq = n.nombrebloq  where sub.nombrebloq = $1', [id]);
 };
 
 IndicatorModel.prototype.getLevel_2 = function(id,callback){

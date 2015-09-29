@@ -75,7 +75,18 @@
 									span(class="circle red")
 								else
 									span -
-							td 
-							td 
-							td
+							if i.num_images > 0
+								td(class="images")
+							else
+								td
+							if i.tiene_ficha_patrimonial
+								td(class="patrimonial")
+							else
+								td
+							if i.tiene_aplicacion_mbp
+								td(class="mbp")
+							else
+								td
+			
+			div(id="imageGallery" class="hide")
 //- div(id="dataLevel")

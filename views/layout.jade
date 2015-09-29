@@ -10,6 +10,8 @@ html
         //- link(rel='stylesheet', href='/stylesheets/style.css')
 
         link(rel='stylesheet', href='lib/leaflet-0.7.3/leaflet.css')
+        link(rel='stylesheet', href='lib/fancybox/jquery.fancybox.css')
+        link(rel='stylesheet', href='lib/fancybox/helpers/jquery.fancybox-thumbs.css')
         link(rel='stylesheet', href='stylesheets/style.css')
         
         script(src='https://www.google.com/jsapi' type="text/javascript")
@@ -17,6 +19,8 @@ html
         if 'production' != process.env.NODE_ENV 
             script(src='/lib/jquery-2.1.3.js')
             script(src='/lib/leaflet-0.7.3/leaflet.js')
+            script(src='/lib/fancybox/jquery.fancybox.pack.js')
+            script(src='/lib/fancybox/helpers/jquery.fancybox-thumbs.js')            
             script(src='/js/global.js')
             script(src='/js/family.js')
             script(src='/js/indicator.js')

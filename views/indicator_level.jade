@@ -4,6 +4,19 @@ div(id="dataLevel")
 			.header
 				img.back-to-page(src='images/bo_ico_back.png', alt='')
 				h3 #{level1.nom_barr}
+				div.documents
+					if level1.num_images > 0
+						div.images
+							a(href="#{level1.nombrebloq}")
+					if level1.tiene_ficha_patrimonial
+						div.patrimonial
+							a(href="documents/#{level1.nombrebloq}/ficha_patrimonial.pdf" target="_blank")
+					if level1.tiene_aplicacion_mbp
+						div.mbp
+							a(href="documents/#{level1.nombrebloq}/aplicacion_mbp.pdf" target="_blank")
+
+				.clear
+
 				.levels
 					span(class="active blue" level="level_1") NIVEL 1
 						span Datos generales de la barriada
@@ -22,5 +35,7 @@ div(id="dataLevel")
 			if level3SupNeigh
 				.level_3.hide
 					include level_3.jade
+
+			div(id="imageGallery")
 
 				

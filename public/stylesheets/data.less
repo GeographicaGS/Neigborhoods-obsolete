@@ -87,6 +87,7 @@
 					}
 
 					.table_info{
+						z-index: 1;
 						text-align: left;
 						color:#55555d;
 						position: absolute;
@@ -214,11 +215,58 @@
 		padding-bottom: 30px;
 
 		h3{
-			margin-left: 70px;
+			// margin-left: 70px;
+			margin-left: 27px;
+			float: left;
 			font-family: @font-body;
 			font-weight: 300;
 			.font-size(3.6);
 			line-height: 38/36;
+		}
+
+		.documents{
+			float: right;
+			margin-top: 8px;
+			a{
+				display: block;
+			}
+			.images{
+				border-left: 1px solid #f1f1f2;
+				padding-left: 18px;
+				padding-right: 18px;
+				display: inline-block;
+				a{
+					background: url('../images/bo_dat_sprite.svg') no-repeat -4px -4px;
+					width: 26px;
+					height: 26px;
+					opacity: 0.5;
+				}
+			}
+			.patrimonial{
+				border-left: 1px solid #f1f1f2;
+				padding-left: 18px;
+				padding-right: 18px;
+				display: inline-block;
+				a{
+					background: url('../images/bo_dat_sprite.svg') no-repeat -70px -4px;
+					width: 26px;
+					height: 26px;
+					opacity: 0.5;
+				}
+			}
+			.mbp{
+				border-left: 1px solid #f1f1f2;
+				border-right: 1px solid #f1f1f2;
+				padding-left: 18px;
+				padding-right: 18px;
+				display: inline-block;
+				a{
+					background: url('../images/bo_dat_sprite.svg') no-repeat -37px -4px;
+					width: 26px;
+					height: 26px;
+					opacity: 0.5;
+				}
+			}
 		}
 
 		.levels{

@@ -35,6 +35,13 @@ router.get('/data', function(req, res, next) {
   });
 });
 
+router.get('/get_images/:id', function(req, res, next) {
+  var id = req.params.id;
+  NeighborhoodsModel.getImages(id,function(err,data){
+    res.json(data);
+  });
+});
+
 router.get('/neighborhods_geom', function(req, res, next) {
     var result = {};
     NeighborhoodsModel.getGeoms(function(err,data){

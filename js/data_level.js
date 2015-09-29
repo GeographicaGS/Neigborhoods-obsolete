@@ -14,5 +14,10 @@ function DataLevel(){
 		$("#dataLevel").on('click', '.back-to-page', function(event) {
 			$('.banner nav a[href="data"]').trigger('click')
 		});
+
+		$("#dataLevel .documents").on('click', '.images a', function(e) {
+			e.preventDefault();
+			mainData.getImageGallery($(this).attr('href'));
+		});			
 	}
 }

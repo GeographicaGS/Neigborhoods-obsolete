@@ -94,6 +94,26 @@ MainData.prototype.onReady = function(){
 			mainData.showIndicator($(this).attr("key"),lat,lng);
 		}
 	});
+
+	$(".indicators-table tr .patrimonial").unbind().on('click', function(e) {
+		e.stopPropagation();
+		var key = $(this).closest('tr').attr('key');
+		window.open('documents/' + key + "/" + "ficha_patrimonial.pdf");
+    	return false;
+	});
+
+	$(".indicators-table tr .mbp").unbind().on('click', function(e) {
+		e.stopPropagation();
+		var key = $(this).closest('tr').attr('key');
+		window.open('documents/' + key + "/" + "aplicacion_mbp.pdf");
+    	return false;
+	});
+
+	$(".indicators-table tr .images").unbind().on('click', function(e) {
+		e.stopPropagation();
+		var key = $(this).closest('tr').attr('key');
+		mainData.getImageGallery(key);
+	});
 }
 
 MainData.prototype.showIndicator = function(key,lat,lng){
@@ -110,5 +130,26 @@ MainData.prototype.showIndicator = function(key,lat,lng){
 				map.setView([lat,lng],17);
 			}
         }
+	});
+}
+
+MainData.prototype.getImageGallery = function(key){
+	$.ajax({
+		url: 'get_images/' + key,
+		success: function(response) {
+			var html = "";
+			for(var i=0; i<response.length; i++){
+				html += '<a class="fancybox" rel="gallery1" href="documents/' + key + '/proyecto_original/' + response[i].nombre_proyecto + '"></a>'
+			}
+			$('#imageGallery').children().remove()
+			$('#imageGallery').html(html);
+
+			$(".fancybox").fancybox({
+				openEffect	: 'none',
+				closeEffect	: 'none'
+			});
+			$('#imageGallery a')[0].click();
+
+		}
 	});
 }

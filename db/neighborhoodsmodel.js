@@ -41,7 +41,8 @@ NeighborhoodsModel.prototype.getWalkerLongGeoms = function(callback){
 };
 
 NeighborhoodsModel.prototype.getNeighborhoodsList = function(callback){
-	BaseModel.query(callback,'select town,city,nom_barr, n.nombrebloq, ST_X(ST_Centroid(ST_Transform(barr.geom,4326))) as lng, ST_Y(ST_Centroid(ST_Transform(barr.geom,4326))) as lat, sub.nombrebloq as level2, level3_table.nombrebloq as level3' +
+	BaseModel.query(callback,'select town,city,nom_barr, n.nombrebloq, ST_X(ST_Centroid(ST_Transform(barr.geom,4326))) as lng, ST_Y(ST_Centroid(ST_Transform(barr.geom,4326))) as lat, sub.nombrebloq as level2, level3_table.nombrebloq as level3, n.tiene_aplicacion_mbp, n.tiene_ficha_patrimonial, ' +
+								' (select count(*) from data.neighborhoods_proyecto where nombrebloq=n.nombrebloq) as num_images' +
 								' from data.neighborhoods n' +
 								' left join nivel_1.barriadas barr on barr.nombrebloq = n.nombrebloq' +
 								' left join nivel_2.sub_barriada sub on sub.nombrebloq = n.nombrebloq' +
@@ -62,6 +63,10 @@ NeighborhoodsModel.prototype.getNeighborhoodsList = function(callback){
 								' UNION' +
 								' select key_bloq from nivel_3_agrupado.sup_jardin) as aux) as level3_table on level3_table.nombrebloq = n.nombrebloq' +
 								' ORDER BY town');
+};
+
+NeighborhoodsModel.prototype.getImages = function(id,callback){
+	BaseModel.query(callback,'select nombre_proyecto from data.neighborhoods_proyecto where nombrebloq = $1 order by nombre_proyecto', [id]);
 };
 
 
