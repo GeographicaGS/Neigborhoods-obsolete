@@ -171,7 +171,7 @@
 			th(colspan="2") Espacios libres – Posibilidad de uso
 		tr
 			td Mal estado y mantenimiento de jardines y AR (%)
-			td #{level3SupNeigh.el_pu_mal_}
+			td #{(level3SupNeigh.el_pu_mal_*100).toFixed(2)}
 		tr
 			td Mal ajardinamiento de jardines y AR (%)
 			td #{(level3SupNeigh.el_pu_ma_1*100).toFixed(2)}
@@ -186,11 +186,11 @@
 			td #{(level3SupNeigh.el_pu_ocup*100).toFixed(2)}
 		tr
 			td Índice de posibilidad de uso (%)
-			td #{(level3SupNeigh.Ind_el_pu*100).toFixed(2)}
+			td #{level3SupNeigh.Ind_el_pu}
 		tr(class='table_sub_header')
 			th(colspan="2") Movilidad – Cobertura transporte público
 		tr
-			td Superficie cubierta por transporte público (m<sup>2</sup>) mov_ctp_su
+			td Superficie cubierta por transporte público (m<sup>2</sup>)
 			td #{level3SupNeigh.mov_ctp_su}
 		tr
 			td Superficie NO cubierta por transporte público (%)
@@ -207,43 +207,43 @@
 		tr(class='table_sub_header')
 			th(colspan="2") Complejidad urbana – Cobertura equipamientos
 		tr
-			td Superficie cubierta cultural (m<sup>2</sup>) cu_cob_eq_
+			td Superficie cubierta cultural (m<sup>2</sup>)
 			td #{level3SupNeigh.cu_cob_eq_}
 		tr
 			td Sup. No cubierta culturales (%)
 			td #{(level3SupNeigh.cu_cob_e_1*100).toFixed(2)}
 		tr
-			td Superficie cubierta deportivos (m<sup>2</sup>) cu_cob_e_2
+			td Superficie cubierta deportivos (m<sup>2</sup>)
 			td #{level3SupNeigh.cu_cob_e_2}
 		tr
 			td Sup. No cubierta deportivos (%)
 			td #{(level3SupNeigh.cu_cob_e_3*100).toFixed(2)}
 		tr
-			td Superficie cubierta Infantil 1º (m<sup>2</sup>) cu_cob_e_4
+			td Superficie cubierta Infantil 1º (m<sup>2</sup>)
 			td #{level3SupNeigh.cu_cob_e_4}
 		tr
 			td Sup. No cubierta educativos infantil 1º (%)
 			td #{(level3SupNeigh.cu_cob_e_5*100).toFixed(2)}
 		tr
-			td Superficie cubierta Infantil 2º y primaria (m<sup>2</sup>) cu_cob_e_6
+			td Superficie cubierta Infantil 2º y primaria (m<sup>2</sup>)
 			td #{level3SupNeigh.cu_cob_e_6}
 		tr
 			td Sup. No cubierta educativos infantil 2º y primaria (%)
 			td #{(level3SupNeigh.cu_cob_e_7*100).toFixed(2)}
 		tr
-			td Superficie cubierta Secundaria, Bachiller y FP (m<sup>2</sup>) cu_cob_e_8
+			td Superficie cubierta Secundaria, Bachiller y FP (m<sup>2</sup>)
 			td #{level3SupNeigh.cu_cob_e_8}
 		tr
 			td Sup. No cubierta educativos secundaria, bachiller, fp (%)
 			td #{(level3SupNeigh.cu_cob_e_9*100).toFixed(2)}
 		tr
-			td Superficie cubierta salud (m<sup>2</sup>) cu_cob_e10
+			td Superficie cubierta salud (m<sup>2</sup>)
 			td #{level3SupNeigh.cu_cob_e10}
 		tr
 			td Sup. No cubierta salud (%)
 			td #{(level3SupNeigh.cu_cob_e11*100).toFixed(2)}
 		tr
-			td Superficie cubierta Bienestar social (m<sup>2</sup>) cu_cob_e12
+			td Superficie cubierta Bienestar social (m<sup>2</sup>)
 			td #{level3SupNeigh.cu_cob_e12}
 		tr
 			td Sup. No cubierta bienestar social (%)
@@ -406,10 +406,10 @@
 		tr(class='table_sub_header')
 			th(colspan="2") Indicadores Geométricos
 		tr
-			td Superficie de envolvente térmica (m<sup>2</sup>) ig_sup_env
+			td Superficie de envolvente térmica (m<sup>2</sup>)
 			td #{level3SupNeigh.ig_sup_env}
 		tr
-			td Cubierta en la envolvente (%) ig_porc_cu
+			td Cubierta en la envolvente (%)
 			td #{level3SupNeigh.ig_porc_cu}
 		tr
 			td Fachada en la envolvente (%)
@@ -445,13 +445,13 @@
 			td Hueco noroeste en la fachada (%)
 			td #{level3SupNeigh.ig_porc__8}
 		tr
-			td Factor de forma (superficie envolvente/volumen) (m<sup>-1</sup>) ig_factor
+			td Factor de forma (superficie envolvente/volumen) (m<sup>-1</sup>)
 			td #{level3SupNeigh.ig_factor}
 		tr
-			td Superficie útil habitable de las viviendas (m<sup>2</sup>) ig_sup_uti
+			td Superficie útil habitable de las viviendas (m<sup>2</sup>)
 			td #{level3SupNeigh.ig_sup_uti}
 		tr
-			td Superficie útil habitable de las zonas comunes de circulación (m<sup>2</sup>) ig_sup_u_1
+			td Superficie útil habitable de las zonas comunes de circulación (m<sup>2</sup>)
 			td #{level3SupNeigh.ig_sup_u_1}
 		tr
 			td Superficie útil total (m<sup>2</sup>)
